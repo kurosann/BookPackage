@@ -1,0 +1,139 @@
+/* 轮播图 start */
+.banner {
+	width: 100%;
+	height: 440upx;
+}
+
+/* 轮播图end */
+
+/* 搜索框  start*/
+
+.search{
+	position: absolute;
+	width: 100%;
+	z-index: 100000000000;
+	background-color: #00000000;
+	
+}
+.serach-ico {
+	width: 40upx;
+	height: 40upx;
+
+}
+
+.serach-text {
+	font-size: 14px;
+	background-color: #eaeaea;
+	height: 60upx;
+	width: 650upx;
+}
+
+.serach-block {
+	display: flex;
+	flex-direction: row;
+	padding: 0upx 20upx 20upx 20upx;
+
+	/* 固定搜索栏 */
+	position: fixed;
+	top: 100;
+
+
+	z-index: 1000;
+
+	background-color: #F8F8F8;
+}
+
+.serach-ico-wapper {
+	background-color: #eaeaea;
+	/* align-self: center; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding: 0upx 20upx;
+}
+
+/* 搜索框 end*/
+
+.groud-item {
+	margin: 24upx;
+}
+
+.two-wapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title1 {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.jianjie {
+	margin-top: 50upx;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.dxbd-first {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+
+.dxbd-first-right {
+	width: 420upx;
+	display: flex;
+	flex-flow: column;
+}
+
+.ffffff {
+	margin-top: 40upx;
+	margin-bottom: 20upx;
+}
+
+.dsfsfds {
+	border-radius: 10%;
+	margin-left: 12upx;
+	margin-right: 12upx;
+}
+
+.img-book22 {
+	height: 240upx;
+	width: 200upx;
+}
+
+.ggfddgvxcv {
+	padding-top: 10upx;
+	display: flex;
+	flex-direction: column;
+}
+
+.book-name {
+	/* white-space: nowrap;
+	overflow: hidden; */
+}
+.fgdfbdfvdfb{
+	display: flex;
+	flex-direction: column;
+}
+.dfsdfs {
+	width: 100upx;
+	padding-top: 20upx;
+	margin: 8upx;
+	background-color: #999999;
+
+}
+
+.img-book {
+	height: 240upx;
+	width: 200upx;
+}
+
+.fdghdkjg {
+	padding: 20upx;
+}

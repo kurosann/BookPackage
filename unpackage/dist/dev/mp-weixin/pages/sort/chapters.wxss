@@ -1,0 +1,19 @@
+.book-chapter.data-v-f7b4242c {
+  width: 100%;
+  height: 100vh;
+  padding: 0 30rpx;
+}
+.book-chapter ._li.list.data-v-f7b4242c {
+  min-height: 80rpx;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.book-chapter ._li.list.active.data-v-f7b4242c {
+  border-bottom: 1px solid #38adfd;
+}
+.book-chapter ._li.list + ._li.list.data-v-f7b4242c {
+  border-top: 1px solid #eee;
+}
+

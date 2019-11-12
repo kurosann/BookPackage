@@ -1,0 +1,314 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "搜书",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/me/me",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/movie/movie",
+			"style": {
+				"navigationBarTitleText": "详情界面"
+			}
+		},
+		{
+			"path": "pages/collection/collection",
+			"style": {
+				"navigationBarTitleText": "收藏",
+				"enablePullDownRefresh": true,
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/rank/rank",
+			"style": {
+				"navigationBarTitleText": "排行榜",
+				"enablePullDownRefresh": true,
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/bookDetail/bookDetail",
+			"style": {
+				"navigationBarTitleText": "图书详情",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/cooperation",
+			"style": {
+				"navigationBarTitleText": "互助",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/host_post/host_post",
+			"style": {
+				"navigationBarTitleText": "热推",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "login",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/meFace/meFace",
+			"style": {
+				"navigationBarTitleText": "meFace",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/meInfo/meInfo",
+			"style": {
+				"navigationBarTitleText": "meInfo",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/meNickname/meNickname",
+			"style": {
+				"navigationBarTitleText": "meNickname",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "message",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/notice/notice",
+			"style": {
+				"navigationBarTitleText": "notice",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/setting/setting",
+			"style": {
+				"navigationBarTitleText": "setting",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sex/sex",
+			"style": {
+				"navigationBarTitleText": "sex",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/put-book/detail/detail",
+			"style": {
+				"navigationBarTitleText": "detail",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/put-book/put-book",
+			"style": {
+				"navigationBarTitleText": "putBook",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/post-book/post-book",
+			"style": {
+				"navigationBarTitleText": "post-book",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/post-book/next/next",
+			"style": {
+				"navigationBarTitleText": "next",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/post-book/null/null",
+			"style": {
+				"navigationBarTitleText": "null",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/buffer/buffer",
+			"style": {
+				"navigationBarTitleText": "null",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/getBookData/getBookData",
+			"style": {
+				"navigationBarTitleText": "getBookData",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sort/search",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "搜索",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sort/sort",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "分类",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sort/sort_detail",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true,
+              "onReachBottomDistance": 50
+			}
+		},
+		{
+			"path": "pages/sort/book_desc",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sort/chapter_reader",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sort/bookshelf",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/sort/chapters",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/chat/chat",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/classify/classify",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/fenlei/fenlei",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/fenlei/detail/detail",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/select/select",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/cooperation/put-book/next/next",
+			"style": {
+              "navigationStyle": "default",
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": true
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"backgroundColor":"#FFFFFF",
+		"selectedColor":"#575757",
+		"color":"#bfbfbf",
+		"list":[
+			{
+				"iconPath":"static/tabBarIco/index.png",
+				"selectedIconPath":"static/tabBarIco/index_sel.png",
+				"pagePath":"pages/index/index",
+				"text":"搜书"
+			},
+			{
+				"iconPath":"static/tabBarIco/search.png",
+				"selectedIconPath":"static/tabBarIco/search_sel.png",
+				"pagePath":"pages/collection/collection",
+				"text":"收藏"
+			},
+			{
+				"iconPath":"static/icon/huzhu1.png",
+				"selectedIconPath":"static/icon/huzhu.png",
+				"pagePath":"pages/cooperation/cooperation",
+				"text":"互助"
+			},
+			{
+				"iconPath":"static/tabBarIco/me.png",
+				"selectedIconPath":"static/tabBarIco/me_sel.png",
+				"pagePath":"pages/me/me",
+				"text":"我的"
+			}
+			]
+	}
+	
+}

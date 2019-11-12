@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "null",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "trailer-stars": "/components/trailerStars"
+  }
+}

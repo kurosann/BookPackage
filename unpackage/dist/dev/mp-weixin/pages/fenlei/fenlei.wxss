@@ -1,0 +1,5 @@
+
+.cu-list.menu-avatar {
+	overflow: hidden;
+}
+

@@ -1,0 +1,1 @@
+<view class="borderBox datalist-div _div data-v-2296af9e"><novel-book vue-id="1" books="{{books}}" class="data-v-2296af9e" bind:__l="__l"></novel-book></view>

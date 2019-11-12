@@ -1,0 +1,210 @@
+.carousel{
+	width:100%;
+	height: 240px;
+}
+/* 热门电影*/
+.super-hot{
+	margin-top: 12rpx;
+	padding: 20rpx;
+}
+.hot-title-wapper{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.hot-ico{
+	width: 30rpx;
+	height: 30rpx;
+	margin-top: 20rpx;
+}
+.hot-title{
+	font-size: 20px;
+	margin-left: 20rpx;
+	font-weight: bold;
+}
+.hot{
+	width: 100%;
+	white-space: normal;
+}
+.single-poster{
+	display: inline-block;
+	margin-left: 20rpx;
+}
+.poster-wapper{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.poster{
+	width: 200rpx;
+	height: 270rpx;
+}
+.moview-name{
+	width: 200rpx;
+	margin-top: 10rpx;
+	font-size: 14px;
+	font-weight: bold;
+	
+	/* name超出则省略 */
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+.hot-movies{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 0rpx 20rpx 20rpx 20rpx;
+}
+.hot-movie-single{
+	widows: 250rpx;
+	height: 220rpx;
+	margin-top: 10rpx;
+}
+.guess-u-like{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.like-movie{
+	width: 180rpx;
+	height: 240rpx;
+	border-radius: 3%;
+}
+.sing-like-movie{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	padding: 30rpx 20rpx;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.movie-desc{
+	margin-top: 20rpx;
+	width: 430rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.movie-title{
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+		font-weight: bold;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+.movie-info{
+	
+	color:#808080 ;
+	overflow:hidden; 
+	margin-top: 10rpx;
+	-o-text-overflow:ellipsis;
+	   text-overflow:ellipsis;
+	
+	display:-webkit-box; 
+	
+	-webkit-box-orient:vertical;
+	
+	-webkit-line-clamp:2;
+}
+.movie-infotwo{
+	color:#808080 ;
+	margin-top: 30rpx;
+	font-size: 14px;
+	/* name超出则省略 */
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+/* 点赞css */
+.movie-oper{
+	width: 140rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	border-left: dashed 2px;
+	border-left-color: #C8C7CC;
+}
+.praise-ico{
+	width: 40rpx;
+	height: 40rpx;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
+}
+.praise-me{
+	font-size: 14px;
+	color: #feab2a;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
+	margin-left: 5rpx;
+}
+.animation-opacity{
+	font-weight: bold;
+	opacity: 0;
+}
+.text {
+	margin-top: 50px;
+	margin-left: 20px;
+	width: 100%;
+}
+

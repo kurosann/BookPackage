@@ -1,0 +1,8 @@
+.chapter-reader-div.data-v-5d03f099 {
+  min-height: 100vh;
+  padding: 20rpx 30rpx;
+  background: #e4cba3;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+

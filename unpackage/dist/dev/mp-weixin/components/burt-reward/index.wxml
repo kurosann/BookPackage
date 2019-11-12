@@ -1,0 +1,1 @@
+<view class="box _div data-v-52ced7c3"><image src="{{pic}}" alt data-event-opts="{{[['longtap',[['savePic',['$event']]]]]}}" bindlongtap="__e" class="_img data-v-52ced7c3"></image><view class="tip _p data-v-52ced7c3">长按保存图片</view></view>

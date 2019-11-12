@@ -1,0 +1,46 @@
+.img-book {
+	height: 240upx;
+	width: 200upx;
+}
+.right-text{
+	height: 240upx;
+	width: 200upx;
+	display: flex;
+	margin-left: 30upx;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.head-mag{
+	padding: 30upx 40upx;
+	background-color: #ffffff;
+}
+.dsffsdfasdc{
+	margin-left: 10upx;
+	margin-bottom: 30upx;
+}
+.sdgdfbvcxvcdf{
+	padding: 30upx;
+	margin: 20upx 10upx;
+
+
+}
+.dsfxzcsdf{
+	align-self: right;
+}
+.fgdfvdfgverv{
+	display: flex;
+	flex-direction: column;
+}
+.dafhrthfgxbc{
+	padding-left: 20upx;
+	padding-right: 20upx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.gsjfndvosin{
+	display: flex;
+	flex-direction: column;
+	
+}

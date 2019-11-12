@@ -1,0 +1,210 @@
+.page{
+	width: 100%;
+	height: 100%;
+	background-color:#FFFFFF ;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	position: absolute;
+}
+
+/* 图书馆图片 */
+.library-icon{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-top: 60rpx;
+	margin-bottom: 40rpx;
+}
+.icon-style{
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 100%;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
+	background-color: #C0C0C0;
+}
+
+/* 图书馆名称 */
+.library-name{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-bottom: 30rpx;
+	margin-top: 30rpx;
+}
+.typeface{
+	font-size: 40rpx;
+	font-weight: bold;
+	color: #007AFF;
+}
+.fenge{
+	width: 100%;
+	height: 30rpx;
+}
+
+/* 学号和密码输入 */
+.num-and-pass{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.num-pass2{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	background-color: #FFFFFF;
+	width: 80%;
+	border: solid 1px #808080;
+}
+.num-pass-icon{
+	width: 80rpx;
+	height: 80rpx;
+	padding: 15rpx 15rpx;
+	-webkit-flex-shrink: 0;
+	    -ms-flex-negative: 0;
+	        flex-shrink: 0;
+}
+.input{
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
+	font-size: 34rpx;
+	height: 80rpx;
+}
+.num-pass{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+/* 学号和密码输入end */
+
+/* 忘记密码 */
+.forget{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.forget2{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	width: 80%;
+	margin-bottom: 30rpx;
+	margin-top: 30rpx;
+}
+.fg{
+	font-size: 30rpx;
+	color: #007AFF;
+}
+
+/* 登录按钮 */
+.btn-style{
+	width: 80%;
+}
+
+/* 提示 */
+.tip{
+	white-space: nowrap;
+	margin-top: 50rpx;
+	position: fixed;  
+	bottom: 20rpx;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
+}
+.tips{
+	height: 100%;
+	width: 80%;
+}
+.tip-text{
+	font-size: 25rpx;
+	color: #007AFF;
+}
+.fenge2{
+	width: 0.5px;
+	height: 100%;
+	background-color:#808080 ;
+	margin-right: 10rpx;
+}
+.fenge3{
+	width: 0.5px;
+	height: 100%;
+	background-color:#808080 ;
+	margin-right: 10rpx;
+}
+

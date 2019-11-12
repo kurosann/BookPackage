@@ -1,0 +1,17 @@
+.player.data-v-68aa0824 {
+}
+.movie.data-v-68aa0824 {
+}
+.movie-info.data-v-68aa0824 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background-color: #f7f4f9;
+}
+

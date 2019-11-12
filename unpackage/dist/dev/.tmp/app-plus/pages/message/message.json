@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "message",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "trailer-stars": "/components/trailerStars"
+  }
+}

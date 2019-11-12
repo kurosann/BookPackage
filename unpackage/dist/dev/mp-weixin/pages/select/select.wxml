@@ -1,0 +1,1 @@
+<view><view class="cu-bar bg-white solid-bottom margin-top"><view class="action"><text class="cuIcon-title text-orange"></text>菜单列表</view><view class="action"><button class="cu-btn bg-green shadow" data-target="menuModal" data-event-opts="{{[['tap',[['showModal',['$event']]]]]}}" bindtap="__e">设置</button></view></view></view>

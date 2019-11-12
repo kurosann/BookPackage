@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"player.",[1],"data-v-68aa0824 { }\n.",[1],"movie.",[1],"data-v-68aa0824 { }\n.",[1],"movie-info.",[1],"data-v-68aa0824 { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; background-color: #f7f4f9; }\n",],undefined,{path:"./pages/movie/movie.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/movie/movie.wxml') } }));

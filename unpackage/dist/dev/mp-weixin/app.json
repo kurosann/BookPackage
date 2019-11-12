@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/search/search",
+    "pages/movie/movie",
+    "pages/collection/collection",
+    "pages/rank/rank",
+    "pages/bookDetail/bookDetail",
+    "pages/cooperation/cooperation",
+    "pages/host_post/host_post",
+    "pages/login/login",
+    "pages/meFace/meFace",
+    "pages/meInfo/meInfo",
+    "pages/meNickname/meNickname",
+    "pages/message/message",
+    "pages/notice/notice",
+    "pages/setting/setting",
+    "pages/sex/sex",
+    "pages/cooperation/put-book/detail/detail",
+    "pages/cooperation/put-book/put-book",
+    "pages/cooperation/post-book/post-book",
+    "pages/cooperation/post-book/next/next",
+    "pages/cooperation/post-book/null/null",
+    "pages/buffer/buffer",
+    "pages/getBookData/getBookData",
+    "pages/sort/search",
+    "pages/sort/sort",
+    "pages/sort/sort_detail",
+    "pages/sort/book_desc",
+    "pages/sort/chapter_reader",
+    "pages/sort/bookshelf",
+    "pages/sort/chapters",
+    "pages/chat/chat",
+    "pages/classify/classify",
+    "pages/fenlei/fenlei",
+    "pages/fenlei/detail/detail",
+    "pages/select/select",
+    "pages/cooperation/put-book/next/next"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#575757",
+    "color": "#bfbfbf",
+    "list": [
+      {
+        "iconPath": "static/tabBarIco/index.png",
+        "selectedIconPath": "static/tabBarIco/index_sel.png",
+        "pagePath": "pages/index/index",
+        "text": "搜书"
+      },
+      {
+        "iconPath": "static/tabBarIco/search.png",
+        "selectedIconPath": "static/tabBarIco/search_sel.png",
+        "pagePath": "pages/collection/collection",
+        "text": "收藏"
+      },
+      {
+        "iconPath": "static/icon/huzhu1.png",
+        "selectedIconPath": "static/icon/huzhu.png",
+        "pagePath": "pages/cooperation/cooperation",
+        "text": "互助"
+      },
+      {
+        "iconPath": "static/tabBarIco/me.png",
+        "selectedIconPath": "static/tabBarIco/me_sel.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "burt-reward": "/components/burt-reward/index"
+  }
+}

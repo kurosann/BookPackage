@@ -1,0 +1,111 @@
+/**主题色**/
+/**主色的btn**/
+.mainBtn.data-v-689dbe33 {
+  background: #38adfd;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 14rpx 30rpx;
+  border-radius: 12rpx;
+  display: inline-block;
+  text-align: center;
+}
+.books-desc-div.data-v-689dbe33 {
+  padding-bottom: 100rpx;
+}
+._header.header.data-v-689dbe33 {
+  height: 312rpx;
+  position: relative;
+}
+._header.header image.bg.data-v-689dbe33 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 0;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  opacity: 0.3;
+}
+._header.header .img-div image.data-v-689dbe33 {
+  width: 178rpx;
+  height: 238rpx;
+  margin: 0 50rpx;
+}
+._header.header .right-div.data-v-689dbe33 {
+  height: 238rpx;
+}
+._header.header .right-div .author-info.data-v-689dbe33 {
+  margin-top: 16rpx;
+  font-size: 26rpx;
+}
+._header.header .right-div .author-info ._span.author.data-v-689dbe33 {
+  color: #e24e4d;
+}
+._header.header .right-div .author-info ._span.type.data-v-689dbe33 {
+  color: #8e8d8d;
+  margin-left: 30rpx;
+}
+._header.header .right-div ._p.word.data-v-689dbe33 {
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  color: #8e8d8d;
+}
+._header.header .right-div ._p.rate.data-v-689dbe33 {
+  font-size: 26rpx;
+  margin-top: 16rpx;
+  color: #8e8d8d;
+}
+.longintro.data-v-689dbe33 {
+  padding: 30rpx;
+  margin-top: 30rpx;
+  background: #fff;
+}
+.longintro ._p.title.data-v-689dbe33 {
+  line-height: 70rpx;
+}
+.longintro .tags-div.data-v-689dbe33 {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 20rpx 0;
+}
+.longintro .tags-div ._li.list.data-v-689dbe33 {
+  line-height: 40rpx;
+  font-size: 24rpx;
+  background: #f0eff4;
+  color: #bebdc5;
+  padding: 0 16rpx;
+  border-radius: 20rpx;
+  margin: 8rpx;
+}
+.longintro ._div.content.data-v-689dbe33 {
+  font-size: 28rpx;
+  text-indent: 56rpx;
+}
+.items-div.data-v-689dbe33 {
+  margin-top: 30rpx;
+  background: #fff;
+}
+.items-div .item.data-v-689dbe33 {
+  min-height: 70rpx;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30rpx;
+}
+.items-div .item + .item.data-v-689dbe33 {
+  border-top: 1px solid #eee;
+}
+.add.data-v-689dbe33 {
+  width: 80%;
+  line-height: 80rpx;
+  position: fixed;
+  left: 10%;
+  bottom: 10rpx;
+  background: #38adfd;
+  border-radius: 40rpx;
+  text-align: center;
+  color: #fff;
+}
+

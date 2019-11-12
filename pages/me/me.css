@@ -1,0 +1,161 @@
+.page{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+/* 头部 */
+.header{
+	background-color: darkorange;
+	padding-top: 20upx;
+	padding-left: 20upx;
+	padding-right: 20upx;
+	display: flex;
+	flex-direction: column;
+
+}
+.header-one{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.header-one-message{
+	align-self: center;
+	height: 40upx;
+	width: 40upx;
+	flex-shrink: 0;
+}
+.header-one-nickname{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.nick-text{
+	color: #6a5018;
+	font-size: 18px;
+	font-weight: bold;
+}
+.herder-one-setting{
+	align-self: center;
+	height: 40upx;
+	width: 40upx;
+	flex-shrink: 0;
+}
+/* 头像 */
+.header-two{
+	padding-top: 20upx;
+	padding-bottom: 20upx;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.header-two-icon{
+	height: 150upx;
+	width: 150upx;
+	border-radius: 100%;
+	flex-shrink: 0;
+}
+/* 头部第三部分 */
+.header-three{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 20upx;
+}
+.header-three-money{
+	color: white;
+	font-size: 12px;
+	padding-right: 20upx;
+	align-self: center;
+}
+.header-three-overdue{
+	align-self: center;
+	color: red;
+	padding-left: 20upx;
+	padding-right: 20upx;
+	font-size: 12px;
+	border-left: solid 2px #FFFFFF;
+	border-right: solid 2px #FFFFFF;
+}
+.header-three-borrow{
+	color: white;
+	font-size: 12px;
+	padding-left: 20upx;
+	align-self: center;
+}
+/* 身体 */
+.body-view{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.body-view-left{
+	background-color: #007AFF;
+	width: 200upx;
+}
+.body-view-right{
+	background-color: #39B54A;
+	width: 200upx;
+}
+/* foot */
+.guess-u-like{
+	display: flex;
+	flex-direction: row;
+	padding-left: 10upx;
+	padding-right: 10upx;
+	justify-content: space-between;
+}
+.single-like-movie{
+	display: flex;
+	flex-direction: row;
+	padding: 30upx 20upx;
+	justify-content: flex-start;
+}
+.like-movie{
+	width: 130upx;
+	border-radius: 3%;
+}
+.poster{
+	width: 130upx;
+	height: 176upx;
+}
+.movie-title{
+	/* 文字超出显示省略号 */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	margin-bottom: 15upx;
+}
+.movie_info{
+	color: #808080;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 10upx;
+}
+.movie-desc{
+	width: 340upx;
+	display: flex;
+	flex-direction: column;
+	padding-left: 30upx;
+	/* justify-content: space-between; */
+}
+.movie-oper{
+	width: 140upx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	border-left: dashed 1px;
+	border-left-color: #C8C7CC;
+	height: 210upx;
+}
+.praise-title{
+	font-size: 14px;
+	color: #007AFF;
+	align-self: center;
+}

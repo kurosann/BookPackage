@@ -1,0 +1,22 @@
+
+.uni-list{
+	display: flex;
+	/* margin-top: 20upx; */
+	flex-direction: row;
+	justify-content: flex-start;
+	padding-left: 30upx;
+	padding-right: 10upx;
+	padding-bottom: 20upx;
+	padding-top: 20upx;
+}
+.uni-list-cell{
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.uni-list-cell-db{
+	white-space: nowrap;
+	font-size: 16px;
+	align-self: center;
+}

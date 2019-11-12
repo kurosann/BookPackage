@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "互助",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "switchc": "/components/zz-switchc/zz-switchc"
+  }
+}

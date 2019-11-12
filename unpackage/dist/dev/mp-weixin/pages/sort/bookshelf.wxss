@@ -1,0 +1,28 @@
+.shelf-div.data-v-dc991026 {
+  padding: 20rpx;
+}
+.shelf-div ._li.list.data-v-dc991026 {
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 12rpx;
+}
+.shelf-div ._li.list .img-div image.data-v-dc991026 {
+  width: 80rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.shelf-div ._li.list .content.data-v-dc991026 {
+  padding: 0 20rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.shelf-div ._li.list ._i.delete.data-v-dc991026 {
+  font-size: 40rpx;
+  color: #a60a0b;
+}
+.shelf-div ._li.list + ._li.list.data-v-dc991026 {
+  border-top: 1px solid #eee;
+}
+

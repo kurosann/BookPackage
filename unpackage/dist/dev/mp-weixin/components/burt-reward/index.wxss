@@ -1,0 +1,14 @@
+._img.data-v-52ced7c3 {
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+  margin: 30rpx auto 0;
+}
+._p.tip.data-v-52ced7c3 {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: rgba(255, 255, 255, 0.8);
+}
+

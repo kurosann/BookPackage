@@ -1,0 +1,11 @@
+.player {
+}
+
+.movie {
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: row;
+    background-color: #f7f4f9;
+}

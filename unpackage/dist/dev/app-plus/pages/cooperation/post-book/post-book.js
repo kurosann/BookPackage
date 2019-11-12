@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"cu-list.",[1],"menu-avatar { overflow: hidden; }\n",],undefined,{path:"./pages/cooperation/post-book/post-book.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/cooperation/post-book/post-book.wxml') } }));
