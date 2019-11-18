@@ -75,10 +75,9 @@ export default{
 header.header{
 	position: fixed;
 	width: 100%;
-	height: 100upx;
 	background: #fff;
 	top: 0;  left: 0;
-	padding: 30upx;
+	padding: 15upx;
 	input{
 		height: 70upx;
 		background: #f8f8f8;
@@ -129,8 +128,7 @@ header.header{
 		align-items: flex-start;
 		li.list{
 			width: 49%;
-			height: 120upx;
-			padding: 0 12upx;
+			padding: 12upx;
 			background: #fff;
 			border-radius: 12upx;
 			.list-l{

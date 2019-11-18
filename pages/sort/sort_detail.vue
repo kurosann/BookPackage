@@ -106,6 +106,10 @@ export default{
 				}
 			}
 			.right-div{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
 				p.name{
 					font-size: 32upx;
 				}

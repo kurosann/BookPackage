@@ -4,7 +4,7 @@
 			<span class="name">账号</span>
 			<input type="text" v-model.trim="user" placeholder="用户名/手机号/邮箱">
 			<i class="iconfont icon-shanchuyixuanqunchengyuanchacha"  v-show="user"
-				@click.stop="user='';"></i>
+				@click.stop="user=''"></i>
 		</div>
 		<div class="flex item">
 			<span class="name">密码</span>
@@ -89,7 +89,6 @@ export default{
 </script>
 
 <style lang="less" scoped>
-@import '../../style/default.less';
 .login-div{
 	padding: 300upx 56upx 0;
 	.item{

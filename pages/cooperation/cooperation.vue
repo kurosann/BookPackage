@@ -2,17 +2,17 @@
 	<view>
 		<view class="box">
 			<view class="cu-bar search bg-white">
-				<view class="cu-bar bg-white solid-bottom margin-top">
-					<view class="action">
-						<text @tap="showModal" data-target="menuModal">全部</text>
+				<view class="cu-bar bg-white solid-bottom margin-top" >
+					<view class="action" @click="showModal()">
+						<text  >{{menutitle}}</text>
 						<text class="cuIcon-triangledownfill"></text>
 					</view>
 				</view>
-				<view class="cu-modal" :class="modalName=='menuModal'?'show':''" @tap="hideModal">
-					<view class="cu-dialog" @tap.stop>
-						<view class="cu-list menu text-left solid-top">
+				<view class="cu-modal" :class="modalName?'show':''" @click="hideModal" style="padding-right: 550upx; padding-left: 20upx;">
+					<view class="cu-dialog" style="z-index: 9999999999999999; ">
+						<view class="cu-list menu text-left solid-top" >
 							<view class="cu-item" v-for="(item,i) in list" @click="dianji(i)">
-								<view class="content">
+								<view class="content" style="width: 100%;">
 									<text class="text-grey">{{item}}</text>
 								</view>
 							</view>
@@ -25,9 +25,6 @@
 				</view>
 				<view class="action">
 					<text>信息 </text>
-					<view class="cu-bar bg-white tabbar border shop">
-						<view class="cu-tag badge">6</view>
-					</view>
 				</view>
 			</view>
 
@@ -38,23 +35,15 @@
 					</view>
 
 					<!-- 写推书 -->
-					<view>
-						<navigator url="put-book/put-book">
-							<view>
-								<button class="cu-btn round" :key="i" style="margin: 8px;">
-									写推书
-								</button>
-							</view>
-						</navigator>
-					</view>
+					
 				</view>
 
 				<view class="cu-card dynamic" :class="isCard?'no-card':''">
 					<view class="cu-item shadow" v-for="(item,i) in temp">
-						<navigator url="put-book/detail/detail">
+						<navigator :url="'put-book/detail/detail?id='+ item.id ">
 							<view class="cu-list menu-avatar">
 								<view class="cu-item">
-									<view class="cu-avatar round lg" style="background-image:url({item.user.userPic});"></view>
+									<view class="cu-avatar round lg" :style="'background-image:url('+item.user.userPic+');'"></view>
 									<view class="content flex-sub">
 										<view>{{item.user.userName}}</view>
 										<view class="text-gray text-sm flex justify-between">
@@ -63,8 +52,8 @@
 									</view>
 								</view>
 							</view>
-							<view class="text-content">
-								{{item.user.userNike}}
+							<view class="text-content" style="padding:  30upx;">
+								{{item.content}}
 							</view>
 							<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
 
@@ -87,20 +76,15 @@
 						<text class="cuIcon-titles text-orange"></text> 热门求书
 					</view>
 
-					<!-- 写求书 -->
-					<navigator url="post-book/post-book">
-						<view>
-							<button class="cu-btn round" :key="i" style="margin: 8px;">写求书</button>
-						</view>
-					</navigator>
+					
 				</view>
 
 				<view class="cu-card dynamic" :class="isCard?'no-card':''">
 					<view class="cu-item shadow" v-for="(item,i) in temp">
-						<navigator url="put-book/detail/detail">
+						<navigator :url="'post-book/detail/detail?id='+ item.id">
 							<view class="cu-list menu-avatar">
 								<view class="cu-item">
-									<view class="cu-avatar round lg" style="background-image:url({+item.user.userPic+});"></view>
+									<view class="cu-avatar round lg" :style="'background-image:url('+item.user.userPic+');'"></view>
 									<view class="content flex-sub">
 										<view>{{item.user.userName}}</view>
 										<view class="text-gray text-sm flex justify-between">
@@ -109,8 +93,8 @@
 									</view>
 								</view>
 							</view>
-							<view class="text-content">
-								{{item.user.userNike}}
+							<view class="text-content"style="padding:  30upx;">
+								{{item.content}}
 							</view>
 							<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
 
@@ -126,63 +110,128 @@
 				</view>
 
 			</view>
+			
+			<view style="display: flex; align-content: center; justify-content: center; padding: 200upx;" v-if="temp.length===0">
+				暂无评论
+			</view>
+			
 		</view>
+		
 	</view>
 </template>
 
 <script>
 	import switchc from '@/components/zz-switchc/zz-switchc.vue'
-
+	var me  ;
 	export default {
 		components: {
 			switchc
 		},
 		data() {
 			return {
+				menutitle: "全部",
 				temp: [],
-				list: ["全部", "理学", "农业", "法学", "工学", "哲学", "文学", "艺术学", "管理学"],
+				list: ["全部", "中国文学", "外国文学", "儿童文学", "散文", "经典名著", "小说", "历史", "教育","成功励志","心灵鸡汤"],
 				switcha: true,
-
+				modalName:false
 			};
 		},
 		onLoad() {
-			var me = this;
+			me = this;
 			uni.showLoading({
 				mask: true,
 				title: "请稍后..."
-			});
-
-			uni.request({
-				url: "http://nanhai655.cn:8080/user/xiangqing",
-				methods: "POST",
-				success: (res) => {
-
-					var trailerList = res.data.list;
-					me.trailerList = trailerList;
-				},
-				complete: () => {
-					uni.hideNavigationBarLoading();
-					uni.hideLoading();
-					uni.stopPullDownRefresh();
-				}
-			})
-
-
-			uni.request({
-				url: "http://134.175.204.38:66/tuishu/getTuiShu",
-				method: "GET",
-				success(res) {
-					me.temp = [];
-					var temp = res.data.data;
-					me.temp = temp;
-					console.log(temp);
-				}
-			})
-
+			});		
+			me.getTuishu();
+			
 		},
 		methods: {
+			
+			saixuan(number){
+				var api = "";
+				if(me.switcha){
+					api = "/tuishu/getTuiShu";
+				}else{
+					api = "/qiushu/getQiushu";
+				}
+				uni.request({
+					url: me.serverUrl+api,
+					method: "GET",
+					success(res) {
+						var type = me.list[number];
+						var result = [];
+						var data1 = res.data.data;
+						var a = false;
+						if(type!=="全部"){
+							for (var i = 0; i < data1.length; i++) {
+								var tmp = data1[i].book; 
+								for (var j = 0; j < tmp.tbCatalogs.length; j++) {
+									if (tmp.tbCatalogs[j].catalogName === type) {
+										result.push(data1[i]) 
+										a = true;
+										if(a) {
+											break;
+										}
+									}
+									
+								}
+							}
+							me.temp = result;
+						}else{
+							me.temp = data1;
+						}
+					},
+					complete: () => {
+						uni.hideNavigationBarLoading();
+						uni.hideLoading();
+						uni.stopPullDownRefresh();
+					}
+				})
+				
+			},
+			
+			getTuishu(){
+				
+				uni.request({
+					url: me.serverUrl+"/tuishu/getTuiShu",
+					method: "GET",
+					success(res) {
+						me.temp = [];
+						var temp = res.data.data;
+						me.temp = temp;
+					},
+					complete: () => {
+						uni.hideNavigationBarLoading();
+						uni.hideLoading();
+						uni.stopPullDownRefresh();
+					}
+				})
+			},
+			
+			getQiushu(){
+				
+				uni.request({
+					url: me.serverUrl+"/qiushu/getQiushu",
+					method: "GET",
+					success(res) {
+						me.temp = [];
+						var temp = res.data.data;
+						me.temp = temp;
+						console.log(temp);
+					},
+					complete: () => {
+						uni.hideNavigationBarLoading();
+						uni.hideLoading();
+						uni.stopPullDownRefresh();
+					}
+					
+				})
+			},
+			
 			dianji(number) {
 				console.log(number);
+				me.saixuan(number);
+				me.menutitle = me.list[number]
 			},
 			InputFocus(e) {
 				this.InputBottom = e.detail.height
@@ -190,8 +239,8 @@
 			InputBlur(e) {
 				this.InputBottom = 0
 			},
-			showModal(e) {
-				this.modalName = e.currentTarget.dataset.target
+			showModal() {
+				this.modalName = !this.modalName
 				console.log(this.modalName)
 			},
 			hideModal(e) {
@@ -217,10 +266,18 @@
 			},
 
 			switchchange(e) {
-				var me = this;
+				uni.showLoading({
+					mask: true,
+					title: "请稍后..."
+				});
+				
 				console.log(e.value);
 				me.switcha = e.value;
-
+				if(me.switcha){
+					me.getTuishu();
+				}else{
+					me.getQiushu();
+				}
 			},
 
 			// ListTouch触摸开始

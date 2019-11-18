@@ -1,27 +1,42 @@
-.datalist-div.data-v-2296af9e {
+.datalist-div.data-v-238d46e8 {
   padding: 30rpx;
 }
-.datalist-div ._ul.box-div ._li.list.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list.data-v-238d46e8 {
   height: 300rpx;
   background: #fff;
   padding: 20rpx;
   border-radius: 16rpx;
 }
-.datalist-div ._ul.box-div ._li.list .img-div image.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list .img-div image.data-v-238d46e8 {
   width: 156rpx;
   height: 220rpx;
   margin-right: 24rpx;
   border-radius: 12rpx;
 }
-.datalist-div ._ul.box-div ._li.list .right-div ._p.name.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list .right-div.data-v-238d46e8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.datalist-div ._ul.box-div ._li.list .right-div ._p.name.data-v-238d46e8 {
   font-size: 32rpx;
 }
-.datalist-div ._ul.box-div ._li.list .right-div .desc.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list .right-div .desc.data-v-238d46e8 {
   font-size: 24rpx;
   color: #919095;
   margin-top: 20rpx;
 }
-.datalist-div ._ul.box-div ._li.list .bottom-div.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list .bottom-div.data-v-238d46e8 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -30,14 +45,14 @@
   color: #919095;
   margin-top: 16rpx;
 }
-.datalist-div ._ul.box-div ._li.list .bottom-div .r-r ._span.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list .bottom-div .r-r ._span.data-v-238d46e8 {
   background: #f0eff4;
   line-height: 36rpx;
   padding: 0 12rpx;
   border-radius: 18rpx;
   color: #98979c;
 }
-.datalist-div ._ul.box-div ._li.list + ._li.list.data-v-2296af9e {
+.datalist-div ._ul.box-div ._li.list + ._li.list.data-v-238d46e8 {
   margin-top: 20rpx;
 }
 

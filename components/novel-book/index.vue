@@ -54,7 +54,6 @@ export default{
 <style lang="less" scoped>
 ul.box-div{
 	li.list{
-		height: 300upx;
 		background: #fff;
 		padding: 20upx;
 		border-radius: 16upx;
@@ -67,6 +66,9 @@ ul.box-div{
 			}
 		}
 		.right-div{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			flex: 1;
 			p.name{
 				font-size: 32upx;

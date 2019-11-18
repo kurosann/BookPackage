@@ -15,6 +15,8 @@
 <script>
 import {setLocalStorage} from '@/utils/index';
 import {mapGetters,mapActions} from 'vuex';
+
+var _self;
 export default{
 	data(){
 		return{
@@ -31,10 +33,13 @@ export default{
 		this.$store.commit('novel/GET_BOOKINDEX', this.id);
 		this.getData();
 	},
+	onLoad() {
+		_self = this;
+	},
 	methods: {
 		seeZhangjie(index){
 			this.$store.commit('novel/SET_BOOKINDEX', {
-				id: this.id,
+				id: _self.id,
 				index: index
 			});
 			let link = encodeURIComponent(this.dataList[index].link);
@@ -42,7 +47,7 @@ export default{
 
 			setLocalStorage('chapterLink', link);
 			uni.navigateTo({
-				url: `/pages/sort/chapter_reader?title=`+title,
+				url: '/pages/sort/chapter_reader?title='+title,
 			});
 		},
 		getData(){
@@ -69,7 +74,7 @@ export default{
 	padding: 0 30upx;
 	li.list{
 		min-height: 80upx;
-		justify-content: space-between;
+		padding: 30upx 10upx 0;
 		&.active{
 			border-bottom:  1px solid #38adfd;
 		}

@@ -271,7 +271,16 @@
               "navigationBarTitleText": "",
               "enablePullDownRefresh": true
 			}
+		},
+		{
+			"path": "pages/cooperation/post-book/detail/detail",
+			"style": {
+		      "navigationStyle": "default",
+		      "navigationBarTitleText": "",
+		      "enablePullDownRefresh": true
+			}
 		}
+		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

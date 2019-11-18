@@ -36,7 +36,8 @@
     "pages/fenlei/fenlei",
     "pages/fenlei/detail/detail",
     "pages/select/select",
-    "pages/cooperation/put-book/next/next"
+    "pages/cooperation/put-book/next/next",
+    "pages/cooperation/post-book/detail/detail"
   ],
   "subPackages": [],
   "window": {

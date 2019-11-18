@@ -58,9 +58,12 @@ export default{
 		jumpPage(url){
 			console.log(url);
 			if(url && typeof(url)=='string'){
+				uni.navigateBack();
 				uni.navigateTo({
 					url: url,
-					animationType: 'zoom-out'
+					animationType: 'zoom-out',
+					success(res) {
+					}
 				});
 			}
 		},
@@ -101,6 +104,8 @@ export default{
 header.header{
 	height: 312upx;
 	position: relative;
+	padding: 30rpx 0 0;
+
 	image.bg{
 		width: 100%;
 		height: 100%;
@@ -173,7 +178,7 @@ header.header{
 	.item{
 		min-height: 70upx;
 		justify-content: space-between;
-		padding: 0 30upx;
+		padding: 30upx;
 	}
 	.item+.item{
 		border-top: 1px solid #eee;
