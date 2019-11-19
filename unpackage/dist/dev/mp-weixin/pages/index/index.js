@@ -235,8 +235,7 @@ var _default =
       books_data: [],
       xingquretui: [],
       start: 0,
-      banner: [],
-      ColorList: this.ColorList };
+      banner: [] };
 
   },
   onLoad: function onLoad() {
@@ -267,9 +266,8 @@ var _default =
       uni.request({
         url: this.serverUrl + '/book/getRandomBook?limit=' + 9,
         success: function success(res) {
-          for (var i = 0; i < res.data.data.length; i++) {
-            index.books_data = res.data.data;
-          }
+          index.books_data = res.data.data;
+          console.log(index.books_data);
         },
         fail: function fail() {
 
@@ -290,7 +288,7 @@ var _default =
     swiperClick: function swiperClick(bookId) {
       console.log(bookId);
       uni.navigateTo({
-        url: '../bookDetail/bookDetail?bookId=' + (bookId + 10) });
+        url: '../bookDetail/bookDetail?bookId=' + bookId });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

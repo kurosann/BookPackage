@@ -29,9 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _collection_vue_vue_type_template_id_bb57d510_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./collection.vue?vue&type=template&id=bb57d510&scoped=true& */ 55);
 /* harmony import */ var _collection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./collection.vue?vue&type=script&lang=js& */ 57);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _collection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _collection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collection.vue?vue&type=style&index=0&id=bb57d510&scoped=true&lang=css& */ 59);
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */ 14);
-
+/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */ 14);
 
 
 
@@ -39,7 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _collection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _collection_vue_vue_type_template_id_bb57d510_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _collection_vue_vue_type_template_id_bb57d510_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -122,257 +120,269 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  name: "collection",
-  data: function data() {
-    return {
-      statusHeight: 0,
-      checkCount: 0,
-      navigationHeight: 0,
-      StatusBar: this.StatusBar,
-      CustomBar: this.CustomBar,
-      dialog: "",
-      switchA: false,
-      isWeixin: false,
-      topCount: 0,
-      modalName: false,
-      bottomName: false,
-      choose: 0,
-      updateCollectionDataUrl: "",
-      list: [
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false },
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false },
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false },
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false },
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false },
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false },
-      { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }],
-
-      checkbox: [{
-        value: 'A',
-        checked: true },
-      {
-        value: 'B',
-        checked: true },
-      {
-        value: 'C',
-        checked: false }],
-
-      isShow: false };
-
-  },
-  computed: {
-    style: function style() {
-      var StatusBar = this.StatusBar;
-      var CustomBar = this.CustomBar;
-      var bgImage = this.bgImage;
-      var style = "height:".concat(CustomBar, "px;padding-top:").concat(StatusBar, "px;");
-      if (this.bgImage) {
-        style = "".concat(style, "background-image:url(").concat(bgImage, ");");
-      }
-      return style;
-    } },
-
-  onLoad: function onLoad() {
-    this.statusHeight = uni.getSystemInfoSync().statusBarHeight;
-    this.navigationHeight = uni.getSystemInfoSync().navigationBarHeight;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
-    uni.showLoading({
-      title: '加载中' });
 
-    this.refresh();
-  },
-  // 下拉刷新响应
-  onPullDownRefresh: function onPullDownRefresh() {
-    this.refresh();
-  },
-  methods: {
-    BackPage: function BackPage() {
-      if (getCurrentPages().length < 2 && 'undefined' !== typeof __wxConfig) {
-        var url = '/' + __wxConfig.pages[0];
-        return uni.redirectTo({ url: url });
-      }
-      uni.navigateBack({
-        delta: 1 });
 
-    },
-    CheckboxChange: function CheckboxChange(e) {
-      var items = this.checkbox,
-      values = e.detail.value;
-      for (var i = 0, lenI = items.length; i < lenI; ++i) {
-        items[i].checked = false;
-        for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
-          if (items[i].value === values[j]) {
-            items[i].checked = true;
-            break;
-          }
-        }
-      }
-    },
-    refresh: function refresh() {
-      var collection = this;
-      uni.showLoading({
-        mask: true });
 
-      uni.request({
-        url: this.serverUrl + "/book/getSave?userId=" + this.userId,
-        method: "GET",
-        success: function success(res) {
-          collection.list = res.data.data;
-          for (var i = 0; i < collection.list.length; i++) {
-            collection.list[i].check = false;
-            collection.list[i].top = collection.list[i].top === 1;
-          }
-          collection.topCount = 0;
-          collection.switchA = false;
-          collection.sortByTop();
-        },
-        fail: function fail() {
 
-        },
-        complete: function complete() {
-          uni.stopPullDownRefresh();
-          uni.hideLoading();
-        } });
 
-    },
-    CheckBoxIsShow: function CheckBoxIsShow(e) {
-      this.isShow = !this.isShow;
-    },
-    SwitchA: function SwitchA(e) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _share = _interopRequireDefault(__webpack_require__(/*! ../common/share.js */ 59));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _self;var _default = { name: "collection", data: function data() {return { statusHeight: 0, checkCount: 0, navigationHeight: 0, StatusBar: this.StatusBar, CustomBar: this.CustomBar, dialog: "", switchA: false, isWeixin: false, topCount: 0, modalName: false, bottomName: false, choose: 0, paddingRight: 10, updateCollectionDataUrl: "", list: [{ book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }, { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }, { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }, { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }, { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }, { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }, { book: { bookPic: "", bookName: "", bookReading: "", bookBytime: "" }, id: "", top: false, check: false }], checkbox: [{ value: 'A', checked: true }, { value: 'B', checked: true }, { value: 'C', checked: false }], isShow: false };}, computed: { style: function style() {var StatusBar = this.StatusBar;var CustomBar = this.CustomBar;var bgImage = this.bgImage;var style = "height:".concat(CustomBar, "px;padding-top:").concat(StatusBar, "px;");if (this.bgImage) {style = "".concat(style, "background-image:url(").concat(bgImage, ");");}return style;} }, onLoad: function onLoad() {_self = this;this.statusHeight = uni.getSystemInfoSync().statusBarHeight;this.navigationHeight = uni.getSystemInfoSync().navigationBarHeight;this.paddingRight = uni.upx2px(200);}, onShow: function onShow() {uni.showLoading({ title: '加载中' });this.refresh();}, // 下拉刷新响应
+  onPullDownRefresh: function onPullDownRefresh() {this.refresh();}, methods: { BackPage: function BackPage() {if (getCurrentPages().length < 2 && 'undefined' !== typeof __wxConfig) {var url = '/' + __wxConfig.pages[0];return uni.redirectTo({ url: url });}uni.navigateBack({ delta: 1 });}, CheckboxChange: function CheckboxChange(e) {var items = this.checkbox,values = e.detail.value;for (var i = 0, lenI = items.length; i < lenI; ++i) {items[i].checked = false;for (var j = 0, lenJ = values.length; j < lenJ; ++j) {if (items[i].value === values[j]) {items[i].checked = true;break;}}}}, refresh: function refresh() {var collection = this;uni.showLoading({ mask: true });uni.request({ url: this.serverUrl + "/book/getSave?userId=" + this.userId, method: "GET", success: function success(res) {for (var i = 0; i < collection.list.length; i++) {collection.list[i].check = false;}collection.list = res.data.data;for (var _i = 0; _i < collection.list.length; _i++) {collection.list[_i].check = false;collection.list[_i].top = collection.list[_i].top === 1;}collection.topCount = 0;collection.switchA = false;collection.sortByTop();}, fail: function fail() {}, complete: function complete() {uni.stopPullDownRefresh();uni.hideLoading();} });}, CheckBoxIsShow: function CheckBoxIsShow(e) {this.isShow = !this.isShow;}, SwitchA: function SwitchA(e) {
       this.switchA = !this.switchA;
       for (var i = 0; i < this.list.length; i++) {
         this.list[i].check = this.switchA;
@@ -383,7 +393,6 @@ var _default =
       for (var i = 0; i < this.list.length; i++) {
         if (this.list[i].check) {
           data.push({ "id": this.list[i].id });
-          this.list.splice(i, 1);
         }
       }
       uni.request({
@@ -391,7 +400,7 @@ var _default =
         method: "POST",
         data: data,
         success: function success() {
-
+          _self.refresh();
         },
         fail: function fail() {
 
@@ -412,37 +421,17 @@ var _default =
     },
     Top: function Top() {
       var data = [];
-      var check = 0;
-      var tmp = true;
-      this.topCount = 0;
       for (var i = 0; i < this.list.length; i++) {
         if (this.list[i].check) {
           data.push({ "id": this.list[i].id });
-          check = check + 1;
-          if (this.list[i].top) {
-            this.topCount = this.topCount + 1;
-          }
         }
       }
-      for (var _i = 0; _i < this.list.length; _i++) {
-        if (this.list[_i].check) {
-          if (check > 1) {
-            if (this.topCount === check) {
-              tmp = false;
-            }
-            this.list[_i].top = tmp;
-          } else {
-            this.list[_i].top = !this.list[_i].top;
-          }
-        }
-      }
-      this.sortByTop();
       uni.request({
         url: this.serverUrl + "/book/changeSaveTops",
         method: "POST",
         data: data,
         success: function success() {
-
+          _self.refresh();
         },
         fail: function fail() {
 
@@ -452,15 +441,15 @@ var _default =
         } });
 
     },
-    Check: function Check(e) {
-      var index = e.target.dataset.index;
+    checkClick: function checkClick(index) {
       this.list[index].check = !this.list[index].check;
-      if (this.list[index].check) {
-        this.checkCount++;
-      } else {
-        this.checkCount--;
+      var checkCount = 0;
+      for (var i = 0; i < this.list.length; i++) {
+        if (this.list[i].check) {
+          checkCount++;
+        }
       }
-      this.switchA = this.checkCount === this.list.length;
+      this.switchA = checkCount === this.list.length;
     },
     c: function c() {
       var data = [];
@@ -489,48 +478,145 @@ var _default =
     },
     turnDetail: function turnDetail() {
       uni.navigateTo({
-        url: '?bookId=' + this.choose.bookId });
+        url: '../bookDetail/bookDetail?bookId=' + this.list[this.choose].bookId });
 
     },
     BottomTop: function BottomTop() {
-      this.list[this.choose].check = !this.list[this.choose].check;
-      this.Top();
+      uni.request({
+        url: this.serverUrl + "/book/changeSaveTops",
+        method: "POST",
+        data: [{
+          "id": this.list[this.choose].id }],
+
+        success: function success() {
+          _self.refresh();
+        },
+        fail: function fail() {},
+        complete: function complete() {} });
+
     },
     BottomDelete: function BottomDelete() {
-      this.list[this.choose].check = !this.list[this.choose].check;
-      this.Delete();
+      uni.request({
+        url: this.serverUrl + "/book/deleteSaves",
+        method: "POST",
+        data: [{
+          "id": this.list[this.choose].id }],
+
+        success: function success() {
+          _self.refresh();
+        },
+        fail: function fail() {
+
+        },
+        complete: function complete() {
+
+        } });
+
     },
     Share: function Share() {
-      uni.showShareMenu();
+      this.shareInfo();
+    },
+    shareInfo: function shareInfo() {var _this = this;
+
+      var shareInfo = {
+        href: 'https://uniapp.dcloud.io',
+        title: '分享测试',
+        desc: '分享测试',
+        imgUrl: '/static/logo.png' };
+
+      var shareList = [
+      {
+        icon: '/static/sharemenu/wx.png',
+        text: '微信好友' },
+
+      {
+        icon: '/static/sharemenu/pyq.png',
+        text: '朋友圈' },
+
+      {
+        icon: '/static/sharemenu/weibo.png',
+        text: '微博' },
+
+      {
+        icon: '/static/sharemenu/qq.png',
+        text: 'QQ' },
+
+      {
+        icon: '/static/sharemenu/copy.png',
+        text: '复制' },
+
+      {
+        icon: '/static/sharemenu/more.png',
+        text: '更多' }];
+
+
+      this.shareObj = (0, _share.default)(shareInfo, shareList, function (index) {
+        console.log('点击按钮的序号: ' + index);
+        var shareObj = {
+          href: shareInfo.href || '',
+          title: shareInfo.title || '',
+          summary: shareInfo.desc || '',
+          success: function success(res) {
+            console.log('success:' + JSON.stringify(res));
+          },
+          fail: function fail(err) {
+            console.log('fail:' + JSON.stringify(err));
+          } };
+
+        switch (index) {
+          case 0:
+            shareObj.provider = 'weixin';
+            shareObj.scene = 'WXSceneSession';
+            shareObj.type = 0;
+            shareObj.imageUrl = shareInfo.imgUrl || '';
+            uni.share(shareObj);
+            break;
+          case 1:
+            shareObj.provider = 'weixin';
+            shareObj.scene = 'WXSenceTimeline';
+            shareObj.type = 0;
+            shareObj.imageUrl = shareInfo.imgUrl || '';
+            uni.share(shareObj);
+            break;
+          case 2:
+            shareObj.provider = 'sinaweibo';
+            shareObj.type = 0;
+            shareObj.imageUrl = shareInfo.imgUrl || '';
+            uni.share(shareObj);
+            break;
+          case 3:
+            shareObj.provider = 'qq';
+            shareObj.type = 1;
+            shareObj.imageUrl = shareInfo.imgUrl || '';
+            uni.share(shareObj);
+            break;
+          case 4:
+            uni.setClipboardData({
+              data: shareInfo.href,
+              complete: function complete() {
+                uni.showToast({
+                  title: '已复制到剪贴板' });
+
+              } });
+
+            break;
+          case 5:
+            plus.share.sendWithSystem({
+              type: 'web',
+              title: shareInfo.title || '',
+              thumbs: [shareInfo.imgUrl || ''],
+              href: shareInfo.href || '',
+              content: shareInfo.desc || '' });
+
+            break;}
+
+      });
+      this.$nextTick(function () {
+        _this.shareObj.alphaBg.show();
+        _this.shareObj.shareMenu.show();
+      });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 59:
-/*!**********************************************************************************************************************************!*\
-  !*** C:/Users/kuro/Desktop/BookPackage/pages/collection/collection.vue?vue&type=style&index=0&id=bb57d510&scoped=true&lang=css& ***!
-  \**********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./collection.vue?vue&type=style&index=0&id=bb57d510&scoped=true&lang=css& */ 60);
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_D_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_collection_vue_vue_type_style_index_0_id_bb57d510_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ 60:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/kuro/Desktop/BookPackage/pages/collection/collection.vue?vue&type=style&index=0&id=bb57d510&scoped=true&lang=css& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

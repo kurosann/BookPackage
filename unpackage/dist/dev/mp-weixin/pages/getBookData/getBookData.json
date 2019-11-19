@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "getBookData",
+  "navigationBarTitleText": "数据分析",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "uni-list-item": "/components/uni-list-item/uni-list-item",

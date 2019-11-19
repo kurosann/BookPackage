@@ -8,14 +8,14 @@
 					<input @focus="InputFocus" @blur="InputBlur" :adjust-position="false" type="text" placeholder="输入书名进行搜索"
 					 confirm-type="search" />
 				</view>
-				</navigator>
+			</navigator>
 			<!-- <view class="action"><button class="cu-btn bg-green shadow-blur round">搜索</button></view> -->
 		</view>
 		<!-- 搜索框end -->
 		<!-- 轮播图 -->
 		<swiper class="screen-swiper round-dot" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000"
 		 duration="500">
-			<swiper-item v-for="(item, index) in banner" :key="index" @click="swiperClick(item.bookId)">
+			<swiper-item v-for="(item, index) in banner" :key="index" @click="swiperClick(books_data[index].bookId)">
 					<image :src="item.bannerPic" mode="aspectFill"></image>
 			</swiper-item>
 		</swiper>
@@ -111,8 +111,7 @@
 				books_data: [],
 				xingquretui: [],
 				start: 0,
-				banner: [],
-				ColorList: this.ColorList
+				banner: []
 			};
 		},
 		onLoad() {
@@ -143,9 +142,8 @@
 				uni.request({
 					url: this.serverUrl + '/book/getRandomBook?limit='+9,
 					success: (res) => {
-						for (let i = 0; i < res.data.data.length; i++) {
-							index.books_data = res.data.data
-						}
+						index.books_data = res.data.data;
+						console.log(index.books_data);
 					},
 					fail: () => {
 
@@ -166,7 +164,7 @@
 			swiperClick(bookId) {
 				console.log(bookId);
 				uni.navigateTo({
-					url: '../bookDetail/bookDetail?bookId=' + (bookId+10)
+					url: '../bookDetail/bookDetail?bookId=' + bookId
 				});
 			}
 		}

@@ -76,8 +76,9 @@
 					<view class="action">
 						<text class="cuIcon-sound text-grey"></text>
 					</view>
-					<input class="solid-bottom" :adjust-position="false" :focus="false" maxlength="300" cursor-spacing="10" @focus="InputFocus"
-					 @blur="InputBlur" v-model="input"></input>
+					<input class="solid-bottom" :adjust-position="false" :focus="false" maxlength="300"
+						   cursor-spacing="10" @focus="InputFocus"
+						   @blur="InputBlur" v-model="input"/>
 					<view class="action">
 						<text class="cuIcon-emojifill text-grey"></text>
 					</view>
@@ -109,12 +110,18 @@
 			uni.showLoading({
 				mask: true,
 				title: "请稍后..."
-			});	
-			me.refresh();
-			
+			});
+			me.refresh({success(title) {
+				uni.setNavigationBarTitle({
+					title: title
+				})
+			}});
+		},
+		onPullDownRefresh() {
+			this.refresh()
 		},
 		methods: {
-			refresh(){
+			refresh(a){
 				
 				uni.request({
 					url: me.serverUrl+"/qiushu/getQiuShuAndPinglunByQiuShuId?qiushuId=" + me.id,
@@ -124,6 +131,7 @@
 						var temp = res.data.data;
 						me.temp = temp;
 						console.log(temp);
+						a.success(temp.title)
 					},
 					complete: () => {
 						uni.hideNavigationBarLoading();

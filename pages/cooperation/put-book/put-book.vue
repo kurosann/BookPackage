@@ -24,7 +24,7 @@
 				</view>
 				<!-- 复选框 -->
 				<view class="cu-form-group">
-					<checkbox class='round' :class="checkbox[1].checked?'checked':''" :checked="checkbox[1].checked?true:false" value="B"></checkbox>
+					<checkbox class='round' :class="checkbox[1].checked?'checked':''" :checked="checkbox[1].checked" value="B"></checkbox>
 				</view>
 			</view>
 			

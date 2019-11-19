@@ -110,12 +110,17 @@
 		   });	
 			me = this;
 			me.id = data.id;
-			me.refresh();
+			me.refresh({success(title) {
+				uni.setNavigationBarTitle({
+					title:title
+				})
+			}});
+		},
+		onPullDownRefresh() {
+			this.refresh()
 		},
 		methods: {
-			
-			refresh(){
-				
+			refresh(a){
 				uni.request({
 					url: me.serverUrl+"/tuishu/getTuiShuAndPingLunByTuiShuId?tuishuId=" + me.id,
 					method: "GET",
@@ -124,6 +129,7 @@
 						var temp = res.data.data;
 						me.temp = temp;
 						console.log(temp);
+						a.success(temp.title)
 					},
 					complete: () => {
 						uni.hideNavigationBarLoading();

@@ -1,14 +1,14 @@
 <template>
 	<div class="search-div">
-		<header class="flex borderBox header">
+		<header class="flex borderBox header" style="display: flex;justify-items: center">
 			<div class="flex input-div">
 				<input class='borderBox' type="text" v-model.trim="keyword" placeholder="搜索" 
 					@confirm="startSearch"/>
 				<i class="iconfont icon-search search"></i>
 				<i class="iconfont icon-chacha1 chacha" v-show="keyword"
-					@click.stop="keyword='';"></i>
+					@click.stop="keyword=''"></i>
 			</div>
-			<div class="btn" @click.stop="startSearch">搜索</div>
+			<div class="btn" style="display: flex;align-items: center" @click.stop="startSearch">搜索</div>
 		</header>
 		<div class="space-div" style="height: 90upx;"></div>
 		
@@ -81,8 +81,7 @@ export default{
 <style lang="less" scoped>
 header.header{
 	width: 100%;
-	height: 90upx;
-	padding: 0 30upx;
+	padding: 20upx 30upx;
 	position: fixed;
 	top: 0;  left: 0;
 	z-index: 99;

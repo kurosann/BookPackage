@@ -733,7 +733,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8913,7 +8913,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8934,14 +8934,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9017,7 +9017,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9586,7 +9586,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 208:
+/***/ 206:
 /*!******************************************************************************!*\
   !*** C:/Users/kuro/Desktop/BookPackage/js_sdk/u-charts/u-charts/u-charts.js ***!
   \******************************************************************************/
@@ -16158,30 +16158,7 @@ main();
 
 /***/ }),
 
-/***/ 6:
-/*!******************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
-  \******************************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, files, gitHead, homepage, license, main, name, repository, scripts, version, default */
-/***/ (function(module) {
-
-module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.0.0-23320190923002","_inBundle":false,"_integrity":"sha512-MnftsvgOac3q1FCOBPzivbFn8GNQFo7D2DY325HeEZyFCWgx5GEwHpGYjT1PQU6v7DaDn0ruxa3ObdpUIYbmZw==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@next","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"next","saveSpec":null,"fetchSpec":"next"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-23320190923002.tgz","_shasum":"0c400c140ca0b3c05f52d25f11583cf05a0c4e9a","_spec":"@dcloudio/uni-stat@next","_where":"/Users/fxy/Documents/DCloud/HbuilderX-plugins/release/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"fed4c73fb9142a1b277dd79313939cad90693d3e","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-23320190923002"};
-
-/***/ }),
-
-/***/ 7:
-/*!*********************************************************************!*\
-  !*** C:/Users/kuro/Desktop/BookPackage/pages.json?{"type":"style"} ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "搜书", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/me/me": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/search/search": { "navigationBarTitleText": "搜索", "usingComponents": { "sl-filter": "/components/sl-filter/sl-filter", "m-search": "/components/mehaotian-search/mehaotian-search" } }, "pages/movie/movie": { "navigationBarTitleText": "详情界面", "usingComponents": {} }, "pages/collection/collection": { "navigationBarTitleText": "收藏", "enablePullDownRefresh": true, "navigationStyle": "custom", "usingComponents": {} }, "pages/rank/rank": { "navigationBarTitleText": "排行榜", "enablePullDownRefresh": true, "navigationStyle": "custom", "usingComponents": {} }, "pages/bookDetail/bookDetail": { "navigationBarTitleText": "图书详情", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/cooperation": { "navigationBarTitleText": "互助", "enablePullDownRefresh": true, "usingComponents": { "switchc": "/components/zz-switchc/zz-switchc" } }, "pages/host_post/host_post": { "navigationBarTitleText": "热推", "enablePullDownRefresh": true, "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/login/login": { "navigationBarTitleText": "login", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/meFace/meFace": { "navigationBarTitleText": "meFace", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/meInfo/meInfo": { "navigationBarTitleText": "meInfo", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/meNickname/meNickname": { "navigationBarTitleText": "meNickname", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/message/message": { "navigationBarTitleText": "message", "enablePullDownRefresh": true, "usingComponents": { "trailer-stars": "/components/trailerStars" } }, "pages/notice/notice": { "navigationBarTitleText": "notice", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/setting/setting": { "navigationBarTitleText": "setting", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sex/sex": { "navigationBarTitleText": "sex", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/put-book/detail/detail": { "navigationBarTitleText": "detail", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/put-book/put-book": { "navigationBarTitleText": "putBook", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/post-book": { "navigationBarTitleText": "post-book", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/next/next": { "navigationBarTitleText": "next", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/null/null": { "navigationBarTitleText": "null", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/buffer/buffer": { "navigationBarTitleText": "null", "enablePullDownRefresh": true, "usingComponents": { "trailer-stars": "/components/trailerStars" } }, "pages/getBookData/getBookData": { "navigationBarTitleText": "getBookData", "enablePullDownRefresh": true, "usingComponents": { "uni-list-item": "/components/uni-list-item/uni-list-item", "uni-list": "/components/uni-list/uni-list", "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" } }, "pages/sort/search": { "navigationStyle": "default", "navigationBarTitleText": "搜索", "enablePullDownRefresh": true, "usingComponents": { "novel-book": "/components/novel-book/index" } }, "pages/sort/sort": { "navigationStyle": "default", "navigationBarTitleText": "分类", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/sort_detail": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "onReachBottomDistance": 50, "usingComponents": { "novel-book": "/components/novel-book/index" } }, "pages/sort/book_desc": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/chapter_reader": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/bookshelf": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/chapters": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/chat/chat": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/classify/classify": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/fenlei/fenlei": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/fenlei/detail/detail": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/select/select": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/put-book/next/next": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/detail/detail": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
-
-/***/ }),
-
-/***/ 73:
+/***/ 59:
 /*!***************************************************************!*\
   !*** C:/Users/kuro/Desktop/BookPackage/pages/common/share.js ***!
   \***************************************************************/
@@ -16306,6 +16283,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   return { alphaBg: alphaBg, shareMenu: shareMenu };
 };var _default =
 shareFn;exports.default = _default;
+
+/***/ }),
+
+/***/ 6:
+/*!******************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
+  \******************************************************/
+/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, files, gitHead, homepage, license, main, name, repository, scripts, version, default */
+/***/ (function(module) {
+
+module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.0.0-23320190923002","_inBundle":false,"_integrity":"sha512-MnftsvgOac3q1FCOBPzivbFn8GNQFo7D2DY325HeEZyFCWgx5GEwHpGYjT1PQU6v7DaDn0ruxa3ObdpUIYbmZw==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@next","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"next","saveSpec":null,"fetchSpec":"next"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-23320190923002.tgz","_shasum":"0c400c140ca0b3c05f52d25f11583cf05a0c4e9a","_spec":"@dcloudio/uni-stat@next","_where":"/Users/fxy/Documents/DCloud/HbuilderX-plugins/release/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"fed4c73fb9142a1b277dd79313939cad90693d3e","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-23320190923002"};
+
+/***/ }),
+
+/***/ 7:
+/*!*********************************************************************!*\
+  !*** C:/Users/kuro/Desktop/BookPackage/pages.json?{"type":"style"} ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "搜书", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/me/me": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/search/search": { "navigationBarTitleText": "搜索", "usingComponents": { "sl-filter": "/components/sl-filter/sl-filter", "m-search": "/components/mehaotian-search/mehaotian-search" } }, "pages/movie/movie": { "navigationBarTitleText": "详情界面", "usingComponents": {} }, "pages/collection/collection": { "navigationBarTitleText": "收藏", "enablePullDownRefresh": true, "navigationStyle": "custom", "usingComponents": {} }, "pages/rank/rank": { "navigationBarTitleText": "排行榜", "enablePullDownRefresh": true, "navigationStyle": "custom", "usingComponents": {} }, "pages/bookDetail/bookDetail": { "navigationBarTitleText": "图书详情", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/cooperation": { "navigationBarTitleText": "互助", "enablePullDownRefresh": true, "usingComponents": { "switchc": "/components/zz-switchc/zz-switchc" } }, "pages/host_post/host_post": { "navigationBarTitleText": "热推", "enablePullDownRefresh": true, "usingComponents": { "uni-load-more": "/components/uni-load-more/uni-load-more" } }, "pages/login/login": { "navigationBarTitleText": "登录", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/meFace/meFace": { "navigationBarTitleText": "我的头像", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/meInfo/meInfo": { "navigationBarTitleText": "个人中心", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/meNickname/meNickname": { "navigationBarTitleText": "修改昵称", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/message/message": { "navigationBarTitleText": "message", "enablePullDownRefresh": true, "usingComponents": { "trailer-stars": "/components/trailerStars" } }, "pages/notice/notice": { "navigationBarTitleText": "notice", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/setting/setting": { "navigationBarTitleText": "设置", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sex/sex": { "navigationBarTitleText": "修改性别", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/put-book/detail/detail": { "navigationBarTitleText": "detail", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/put-book/put-book": { "navigationBarTitleText": "putBook", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/post-book": { "navigationBarTitleText": "post-book", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/next/next": { "navigationBarTitleText": "next", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/null/null": { "navigationBarTitleText": "null", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/buffer/buffer": { "navigationBarTitleText": "消息", "enablePullDownRefresh": true, "usingComponents": { "trailer-stars": "/components/trailerStars" } }, "pages/getBookData/getBookData": { "navigationBarTitleText": "数据分析", "enablePullDownRefresh": true, "usingComponents": { "uni-list-item": "/components/uni-list-item/uni-list-item", "uni-list": "/components/uni-list/uni-list", "uni-collapse": "/components/uni-collapse/uni-collapse", "uni-collapse-item": "/components/uni-collapse-item/uni-collapse-item" } }, "pages/sort/search": { "navigationStyle": "default", "navigationBarTitleText": "搜索", "enablePullDownRefresh": true, "usingComponents": { "novel-book": "/components/novel-book/index" } }, "pages/sort/sort": { "navigationStyle": "default", "navigationBarTitleText": "分类", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/sort_detail": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "onReachBottomDistance": 50, "usingComponents": { "novel-book": "/components/novel-book/index" } }, "pages/sort/book_desc": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/chapter_reader": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/bookshelf": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/sort/chapters": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/chat/chat": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/classify/classify": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/fenlei/fenlei": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/fenlei/detail/detail": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/select/select": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/put-book/next/next": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} }, "pages/cooperation/post-book/detail/detail": { "navigationStyle": "default", "navigationBarTitleText": "", "enablePullDownRefresh": true, "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 

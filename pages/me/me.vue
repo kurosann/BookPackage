@@ -37,16 +37,16 @@
 			<block v-if="TabCur==0">		
 				<view class="guess-u-like">
 					<view class="single-like-movie">
-						<image src="../../static/icon/tushuguan.jpg" class="poster like-movie"></image> 
+						<image src="http://apis.juhe.cn/goodbook/img/cb6f51ead4c4959b2d93fcbecb189b96.jpg" class="poster like-movie"></image>
 							<view class="movie-desc">
 								<view class="movie-title">
-									设计心理学
+									生猛的进化心理学
 								</view>
 								<view class="movie_info">
-									作者：唐纳德·诺曼
+									作者：Alan S.Miller & Satoshi Kanazawa / 金泽哲
 								</view>
 								<view class="movie_info">
-									截至：2019年10月29日
+									截至：2010年7月
 								</view>
 							</view>
 					</view>

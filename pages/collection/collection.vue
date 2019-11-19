@@ -13,7 +13,7 @@
                 <view class="content" style="top: 5upx">
                     <slot name="content">收藏</slot>
                 </view>
-                <view style="margin-right: 200upx" @click="CheckBoxIsShow">编辑</view>
+                <view :style="'margin-right: '+paddingRight+'px'" @click="CheckBoxIsShow">编辑</view>
             </view>
         </view>
         <view>
@@ -39,14 +39,14 @@
                             <view style="height: 100%" v-show="isShow">
                                 <!-- #ifdef MP-ALIPAY -->
                                 <view class="cu-form-group margin-top">
-                                    <checkbox :class="item.check?'checked':''" :checked="item.check" :data-index="i"
-                                              @click="Check" value="A"></checkbox>
+                                    <checkbox :class="item.check?'checked':''" :data-index="i"
+                                              @click="checkClick(i)" value="A" v-model="item.check"></checkbox>
                                 </view>
                                 <!-- #endif -->
                                 <!-- #ifndef MP-ALIPAY -->
                                 <view class="cu-form-group">
                                     <checkbox :checked="item.check" :class="item.check?'checked':''" :data-index="i"
-                                              @click="Check"
+                                              @click="checkClick(i)"
                                               class='round' value="B"></checkbox>
                                 </view>
                                 <!-- #endif -->
@@ -93,25 +93,25 @@
                 <view>
                     <view class="cu-list menu">
                         <view class="cu-item">
-                            <button class="cu-btn content" open-type="contact" @click="BottomTop">
+                            <button class="cu-btn content" @click="BottomTop">
                                 <text class="cuIcon-top text-pink"></text>
                                 <text class="text-grey">置顶</text>
                             </button>
                         </view>
                         <view class="cu-item">
-                            <button class="cu-btn content" open-type="contact" @click="BottomDelete">
+                            <button class="cu-btn content" @click="BottomDelete">
                                 <text class="cuIcon-delete text-pink"></text>
                                 <text class="text-grey">删除</text>
                             </button>
                         </view>
                         <view class="cu-item">
-                            <button class="cu-btn content" open-type="contact" @click="Share">
+                            <button class="cu-btn content" @click="Share">
                                 <text class="cuIcon-share text-pink"></text>
                                 <text class="text-grey">分享</text>
                             </button>
                         </view>
                         <view class="cu-item">
-                            <button class="cu-btn content" open-type="contact" @click="turnDetail">
+                            <button class="cu-btn content" @click="turnDetail">
                                 <text class="cuIcon-edit text-pink"></text>
                                 <text class="text-grey">书籍详情</text>
                             </button>
@@ -129,6 +129,8 @@
 </template>
 
 <script>
+    import share from '../common/share.js';
+    let _self;
     export default {
         name: "collection",
         data() {
@@ -145,6 +147,7 @@
                 modalName: false,
                 bottomName: false,
                 choose: 0,
+                paddingRight: 10,
                 updateCollectionDataUrl:"",
                 list:[
                     {book:{bookPic:"",bookName:"",bookReading:"",bookBytime:""}, id:"",top:false,check: false},
@@ -181,16 +184,22 @@
             }
         },
 		onLoad() {
+            _self = this;
             this.statusHeight = uni.getSystemInfoSync().statusBarHeight;
             this.navigationHeight = uni.getSystemInfoSync().navigationBarHeight;
             // #ifdef H5
             this.navigationHeight= 50;
             // #endif
+            // #ifdef MP-WEIXIN
+            this.paddingRight= uni.upx2px(200);
+            // #endif
+		},
+        onShow(){
             uni.showLoading({
                 title: '加载中'
             });
             this.refresh();
-		},
+        },
         // 下拉刷新响应
         onPullDownRefresh() {
             this.refresh();
@@ -227,6 +236,9 @@
                     url:this.serverUrl+"/book/getSave?userId=" + this.userId,
                     method:"GET",
                     success(res) {
+                        for (let i = 0; i < collection.list.length; i++) {
+                            collection.list[i].check = false;
+                        }
                         collection.list = res.data.data;
                         for (let i = 0; i < collection.list.length; i++) {
                             collection.list[i].check = false;
@@ -259,7 +271,6 @@
                 for (let i = 0; i < this.list.length; i++) {
                     if (this.list[i].check) {
                         data.push({"id":this.list[i].id});
-                        this.list.splice(i,1)
                     }
                 }
                 uni.request({
@@ -267,7 +278,7 @@
 					method:"POST",
 					data:data,
 					success() {
-
+                        _self.refresh()
 					},
 					fail() {
 
@@ -288,37 +299,17 @@
             },
             Top() {
                 let data = [];
-                var check = 0;
-                var tmp = true;
-                this.topCount = 0;
-                for (let i = 0; i <this.list.length; i++) {
-                    if (this.list[i].check) {
-                        data.push({"id":this.list[i].id});
-                        check = check+1;
-                        if (this.list[i].top) {
-                            this.topCount = this.topCount + 1;
-                        }
-                    }
-                }
                 for (let i = 0; i < this.list.length; i++) {
                     if (this.list[i].check) {
-                        if (check>1) {
-                            if (this.topCount === check) {
-                                tmp = false;
-                            }
-                            this.list[i].top = tmp;
-                        } else {
-                            this.list[i].top = !this.list[i].top;
-                        }
+                        data.push({"id":this.list[i].id});
                     }
                 }
-                this.sortByTop();
                 uni.request({
                 	url:this.serverUrl + "/book/changeSaveTops",
 					method:"POST",
 					data:data,
 					success() {
-
+                        _self.refresh()
 					},
 					fail() {
 
@@ -328,15 +319,15 @@
 					}
                 })
             },
-            Check(e) {
-                var index = e.target.dataset.index;
+            checkClick(index) {
                 this.list[index].check = !this.list[index].check;
-				if (this.list[index].check) {
-					this.checkCount++;
-				} else {
-					this.checkCount--;
-				}
-                this.switchA = (this.checkCount === this.list.length);
+                var checkCount = 0;
+                for (let i = 0; i < this.list.length; i++) {
+                   if (this.list[i].check) {
+                       checkCount++
+                   }
+                }
+                this.switchA = (checkCount === this.list.length);
             },
             c() {
                 let data = [];
@@ -365,32 +356,147 @@
             },
             turnDetail() {
                 uni.navigateTo({
-                    url:'?bookId=' + this.choose.bookId
+                    url:'../bookDetail/bookDetail?bookId=' + this.list[this.choose].bookId
                 })
             },
             BottomTop() {
-                this.list[this.choose].check = !this.list[this.choose].check;
-                this.Top()
+                uni.request({
+                    url:this.serverUrl + "/book/changeSaveTops",
+                    method:"POST",
+                    data: [{
+                        "id": this.list[this.choose].id
+                    }],
+                    success() {
+                        _self.refresh()
+                    },
+                    fail() {},
+                    complete() {}
+                })
             },
             BottomDelete() {
-                this.list[this.choose].check = !this.list[this.choose].check;
-                this.Delete()
+                uni.request({
+                    url:this.serverUrl + "/book/deleteSaves",
+                    method:"POST",
+                    data:[{
+                        "id" : this.list[this.choose].id
+                    }],
+                    success() {
+                        _self.refresh()
+                    },
+                    fail() {
+
+                    },
+                    complete() {
+
+                    }
+                })
             },
             Share() {
-                uni.showShareMenu()
+                this.shareInfo();
             },
+            shareInfo() {
 
+                let shareInfo = {
+                    href: 'https://uniapp.dcloud.io',
+                    title: '分享测试',
+                    desc: '分享测试',
+                    imgUrl: '/static/logo.png'
+                };
+                let shareList = [
+                    {
+                        icon: '/static/sharemenu/wx.png',
+                        text: '微信好友'
+                    },
+                    {
+                        icon: '/static/sharemenu/pyq.png',
+                        text: '朋友圈'
+                    },
+                    {
+                        icon: '/static/sharemenu/weibo.png',
+                        text: '微博'
+                    },
+                    {
+                        icon: '/static/sharemenu/qq.png',
+                        text: 'QQ'
+                    },
+                    {
+                        icon: '/static/sharemenu/copy.png',
+                        text: '复制'
+                    },
+                    {
+                        icon: '/static/sharemenu/more.png',
+                        text: '更多'
+                    }
+                ];
+                this.shareObj = share(shareInfo, shareList, function(index) {
+                    console.log('点击按钮的序号: ' + index);
+                    let shareObj = {
+                        href: shareInfo.href || '',
+                        title: shareInfo.title || '',
+                        summary: shareInfo.desc || '',
+                        success: res => {
+                            console.log('success:' + JSON.stringify(res));
+                        },
+                        fail: err => {
+                            console.log('fail:' + JSON.stringify(err));
+                        }
+                    };
+                    switch (index) {
+                        case 0:
+                            shareObj.provider = 'weixin';
+                            shareObj.scene = 'WXSceneSession';
+                            shareObj.type = 0;
+                            shareObj.imageUrl = shareInfo.imgUrl || '';
+                            uni.share(shareObj);
+                            break;
+                        case 1:
+                            shareObj.provider = 'weixin';
+                            shareObj.scene = 'WXSenceTimeline';
+                            shareObj.type = 0;
+                            shareObj.imageUrl = shareInfo.imgUrl || '';
+                            uni.share(shareObj);
+                            break;
+                        case 2:
+                            shareObj.provider = 'sinaweibo';
+                            shareObj.type = 0;
+                            shareObj.imageUrl = shareInfo.imgUrl || '';
+                            uni.share(shareObj);
+                            break;
+                        case 3:
+                            shareObj.provider = 'qq';
+                            shareObj.type = 1;
+                            shareObj.imageUrl = shareInfo.imgUrl || '';
+                            uni.share(shareObj);
+                            break;
+                        case 4:
+                            uni.setClipboardData({
+                                data: shareInfo.href,
+                                complete() {
+                                    uni.showToast({
+                                        title: '已复制到剪贴板'
+                                    });
+                                }
+                            });
+                            break;
+                        case 5:
+                            plus.share.sendWithSystem({
+                                type: 'web',
+                                title: shareInfo.title || '',
+                                thumbs: [shareInfo.imgUrl || ''],
+                                href: shareInfo.href || '',
+                                content: shareInfo.desc || ''
+                            });
+                            break;
+                    }
+                });
+                this.$nextTick(() => {
+                    this.shareObj.alphaBg.show();
+                    this.shareObj.shareMenu.show();
+                });
+            }
         }
     }
 </script>
 
 <style scoped>
-    .weixin{
-        bottom: 0;
-    }
-    .nweixin{
-        bottom: 100upx;
-    }
-
-
 </style>

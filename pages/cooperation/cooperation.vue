@@ -1,11 +1,13 @@
 <template>
 	<view>
 		<view class="box">
-			<view class="cu-bar search bg-white">
-				<view class="cu-bar bg-white solid-bottom margin-top" >
-					<view class="action" @click="showModal()">
-						<text  >{{menutitle}}</text>
-						<text class="cuIcon-triangledownfill"></text>
+			<view class="cu-bar search bg-white" style="display: flex;flex-direction: row;justify-content: space-between">
+				<view class="flex" style="width: 100%">
+					<view class="cu-bar bg-white solid-bottom" >
+						<view class="action" @click="showModal()">
+							<text  >{{menutitle}}</text>
+							<text class="cuIcon-triangledownfill"></text>
+						</view>
 					</view>
 				</view>
 				<view class="cu-modal" :class="modalName?'show':''" @click="hideModal" style="padding-right: 550upx; padding-left: 20upx;">
@@ -20,11 +22,15 @@
 					</view>
 				</view>
 				<!-- 切换 -->
-				<view class="cu-form-group margin-top">
-					<switchc text="推书|求书" @change="switchchange()"></switchc><!-- @change="SwitchA" :class="switchA?'checked':''" :checked="switchA?true:false" -->
+				<view class="flex" style="width: 100%;justify-content: center">
+					<view class="cu-form-group">
+						<switchc text="推|求" @change="switchchange()"></switchc>
+					</view>
 				</view>
-				<view class="action">
-					<text>信息 </text>
+				<view style="width: 100%">
+					<view class="action" style="height: 100%;text-align: end;justify-content: flex-end" @click="gotoBuffer">
+						<text>信息 </text>
+					</view>
 				</view>
 			</view>
 
@@ -38,7 +44,7 @@
 					
 				</view>
 
-				<view class="cu-card dynamic" :class="isCard?'no-card':''">
+				<view class="cu-card dynamic">
 					<view class="cu-item shadow" v-for="(item,i) in temp">
 						<navigator :url="'put-book/detail/detail?id='+ item.id ">
 							<view class="cu-list menu-avatar">
@@ -55,7 +61,7 @@
 							<view class="text-content" style="padding:  30upx;">
 								{{item.content}}
 							</view>
-							<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
+							<view class="grid flex-sub padding-lr col-3 grid-square">
 
 							</view>
 							<view class="text-gray text-sm text-right padding">
@@ -75,11 +81,9 @@
 					<view class="action">
 						<text class="cuIcon-titles text-orange"></text> 热门求书
 					</view>
-
-					
 				</view>
 
-				<view class="cu-card dynamic" :class="isCard?'no-card':''">
+				<view class="cu-card dynamic">
 					<view class="cu-item shadow" v-for="(item,i) in temp">
 						<navigator :url="'post-book/detail/detail?id='+ item.id">
 							<view class="cu-list menu-avatar">
@@ -93,10 +97,10 @@
 									</view>
 								</view>
 							</view>
-							<view class="text-content"style="padding:  30upx;">
-								{{item.content}}
+							<view class="text-content" style="padding:  30upx;">
+								{{item.title}}
 							</view>
-							<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
+							<view class="grid flex-sub padding-lr col-3 grid-square">
 
 							</view>
 							<view class="text-gray text-sm text-right padding">
@@ -122,7 +126,8 @@
 
 <script>
 	import switchc from '@/components/zz-switchc/zz-switchc.vue'
-	var me  ;
+
+	var me;
 	export default {
 		components: {
 			switchc
@@ -133,20 +138,25 @@
 				temp: [],
 				list: ["全部", "中国文学", "外国文学", "儿童文学", "散文", "经典名著", "小说", "历史", "教育","成功励志","心灵鸡汤"],
 				switcha: true,
-				modalName:false
+				modalName:false,
+				number:0
 			};
 		},
 		onLoad() {
 			me = this;
-			uni.showLoading({
-				mask: true,
-				title: "请稍后..."
-			});		
-			me.getTuishu();
-			
+			this.refresh()
+		},
+		onPullDownRefresh() {
+			this.refresh()
 		},
 		methods: {
-			
+			refresh() {
+				uni.showLoading({
+					mask: true,
+					title: "请稍后..."
+				});
+				me.saixuan(this.number)
+			},
 			saixuan(number){
 				var api = "";
 				if(me.switcha){
@@ -167,13 +177,12 @@
 								var tmp = data1[i].book; 
 								for (var j = 0; j < tmp.tbCatalogs.length; j++) {
 									if (tmp.tbCatalogs[j].catalogName === type) {
-										result.push(data1[i]) 
+										result.push(data1[i]);
 										a = true;
 										if(a) {
 											break;
 										}
 									}
-									
 								}
 							}
 							me.temp = result;
@@ -189,47 +198,9 @@
 				})
 				
 			},
-			
-			getTuishu(){
-				
-				uni.request({
-					url: me.serverUrl+"/tuishu/getTuiShu",
-					method: "GET",
-					success(res) {
-						me.temp = [];
-						var temp = res.data.data;
-						me.temp = temp;
-					},
-					complete: () => {
-						uni.hideNavigationBarLoading();
-						uni.hideLoading();
-						uni.stopPullDownRefresh();
-					}
-				})
-			},
-			
-			getQiushu(){
-				
-				uni.request({
-					url: me.serverUrl+"/qiushu/getQiushu",
-					method: "GET",
-					success(res) {
-						me.temp = [];
-						var temp = res.data.data;
-						me.temp = temp;
-						console.log(temp);
-					},
-					complete: () => {
-						uni.hideNavigationBarLoading();
-						uni.hideLoading();
-						uni.stopPullDownRefresh();
-					}
-					
-				})
-			},
-			
 			dianji(number) {
 				console.log(number);
+				this.number = number;
 				me.saixuan(number);
 				me.menutitle = me.list[number]
 			},
@@ -240,7 +211,7 @@
 				this.InputBottom = 0
 			},
 			showModal() {
-				this.modalName = !this.modalName
+				this.modalName = !this.modalName;
 				console.log(this.modalName)
 			},
 			hideModal(e) {
@@ -270,14 +241,10 @@
 					mask: true,
 					title: "请稍后..."
 				});
-				
+				this.menutitle = '全部';
 				console.log(e.value);
 				me.switcha = e.value;
-				if(me.switcha){
-					me.getTuishu();
-				}else{
-					me.getQiushu();
-				}
+				me.saixuan(this.number)
 			},
 
 			// ListTouch触摸开始
@@ -298,6 +265,11 @@
 					this.modalName = null
 				}
 				this.listTouchDirection = null
+			},
+			gotoBuffer(){
+				uni.navigateTo({
+					url:"../buffer/buffer"
+				})
 			}
 		}
 	}

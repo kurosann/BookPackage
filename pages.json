@@ -65,28 +65,28 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "login",
+				"navigationBarTitleText": "登录",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/meFace/meFace",
 			"style": {
-				"navigationBarTitleText": "meFace",
+				"navigationBarTitleText": "我的头像",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/meInfo/meInfo",
 			"style": {
-				"navigationBarTitleText": "meInfo",
+				"navigationBarTitleText": "个人中心",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/meNickname/meNickname",
 			"style": {
-				"navigationBarTitleText": "meNickname",
+				"navigationBarTitleText": "修改昵称",
 				"enablePullDownRefresh": true
 			}
 		},
@@ -107,14 +107,14 @@
 		{
 			"path": "pages/setting/setting",
 			"style": {
-				"navigationBarTitleText": "setting",
+				"navigationBarTitleText": "设置",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/sex/sex",
 			"style": {
-				"navigationBarTitleText": "sex",
+				"navigationBarTitleText": "修改性别",
 				"enablePullDownRefresh": true
 			}
 		},
@@ -156,14 +156,14 @@
 		{
 			"path": "pages/buffer/buffer",
 			"style": {
-				"navigationBarTitleText": "null",
+				"navigationBarTitleText": "消息",
 				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/getBookData/getBookData",
 			"style": {
-				"navigationBarTitleText": "getBookData",
+				"navigationBarTitleText": "数据分析",
 				"enablePullDownRefresh": true
 			}
 		},

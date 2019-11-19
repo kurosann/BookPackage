@@ -28,13 +28,13 @@
 		<!-- 底部start -->
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
-				<view class="cu-item flex-sub" :class="index == TabCur ? 'text-green' : ''" v-for="(item, index) in tab" :key="index" @tap="tabSelect" :data-id="index">
+				<view class="cu-item flex-sub" :class="index == TabCur ? 'text-green' : ''" v-for="(item, index) in tab" :key="index" @tap="tabSelect(index)">
 					{{ item }}
 				</view>
 			</view>
 		</scroll-view>
 
-		<view class="bg-white fgdfvdfgverv" style="padding: 20upx">
+		<view class="bg-white fgdfvdfgverv" style="padding: 20upx" v-if="TabCur ==0">
 			<view class="dafhrthfgxbc">
 				<view class="gsjfndvosin">
 					<text>所在馆：南职图书馆</text>
@@ -47,7 +47,30 @@
 				</view>
 			</view>
 		</view>
+		<view class="cu-card dynamic no-card" v-else-if="TabCur == 1">
+			<view class="cu-item shadow" v-for="(item,i) in comment">
+				<view class="cu-list menu-avatar">
+					<view class="cu-item">
+						<view class="cu-avatar round lg" :style="'background-image:url('+item.userPic+');'"></view>
+						<view class="content flex-sub">
+							<view>{{item.userName}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="text-content" style="padding:  30upx;">
+					{{item.content}}
+				</view>
+				<view class="grid flex-sub padding-lr col-3 grid-square">
 
+				</view>
+				<view class="text-gray text-sm text-right padding">
+					<text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+					<text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+					<text class="cuIcon-messagefill margin-lr-xs"></text> 30
+				</view>
+
+			</view>
+		</view>
 		<view class="cu-bar bg-white tabbar border shop" style="position:fixed;bottom:0;width: 100%;z-index:9999999" @click="addBook">
 
 			<view class="bg-red submit" @click="">收藏</view>
@@ -85,6 +108,7 @@ export default {
 			modalName: false,
 			bookId:'',
 			resBookDetail:'',
+			comment:[]
 		};
 	},
 	onLoad(params) {
@@ -95,11 +119,12 @@ export default {
 		this.fenxiang();
 		this.bookId = params.bookId;
 		console.log(this.bookId);
-		this.getBookDetail(this.bookId);
+
 		uni.setNavigationBarColor({
 			frontColor:'#000000',
 			backgroundColor: '#FFFFFF'
-		})
+		});
+		this.refresh();
 
 	},
 	// 监听原生导航栏
@@ -109,7 +134,9 @@ export default {
 			this.shareInfo();
 		}
 	},
-
+	onPullDownRefresh() {
+		_self.refresh()
+	},
 	onShareAppMessage(res) {
 		if (res.from === 'button') {
 			// 来自页面内分享按钮
@@ -121,9 +148,13 @@ export default {
 		};
 	},
 	methods: {
-		tabSelect(e) {
-			this.TabCur = e.currentTarget.dataset.id;
-			this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60;
+		refresh(){
+			this.getBookDetail(this.bookId);
+		},
+		tabSelect(index) {
+			this.TabCur = index;
+            console.log(this.TabCur);
+            this.scrollLeft = (index - 1) * 60;
 		},
 		SwitchA(e) {
 			this.switchA = !this.switchA;
@@ -146,6 +177,7 @@ export default {
 				success: res => {
 					this.resBookDetail = res.data.data;
 					console.log(res.data.data);
+					_self.requestGetBookComment()
 				},
 				complete(res) {
 					uni.hideLoading();
@@ -153,7 +185,6 @@ export default {
 			});
 		},
 		addBook() {
-			var _self = this;
 			uni.request({
 				method:"POST",
 				data:{
@@ -184,6 +215,21 @@ export default {
 		},
 		hideModal(e) {
 			this.modalName = false;
+		},
+		requestGetBookComment() {
+			uni.request({
+				url:this.serverUrl + '/comment/getCommentByBookId?bookId=' + this.bookId,
+				method:'GET',
+				success(res) {
+					_self.comment = res.data.data;
+					console.log(_self.comment);
+				},
+				complete(res) {
+					uni.stopPullDownRefresh();
+					uni.hideLoading();
+					uni.hideNavigationBarLoading()
+				}
+			})
 		},
 		shareInfo() {
 
@@ -270,13 +316,7 @@ export default {
 						});
 						break;
 					case 5:
-						plus.share.sendWithSystem({
-							type: 'web',
-							title: shareInfo.title || '',
-							thumbs: [shareInfo.imgUrl || ''],
-							href: shareInfo.href || '',
-							content: shareInfo.desc || ''
-						});
+
 						break;
 				}
 			});
