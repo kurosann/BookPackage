@@ -368,6 +368,7 @@ var me;var _default =
       this.menutitle = '全部';
       console.log(e.value);
       me.switcha = e.value;
+      this.number = 0;
       me.saixuan(this.number);
     },
 

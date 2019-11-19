@@ -1,2 +1,1 @@
-setCssToHead([".",[1],"weixin.",[1],"data-v-4f7dae82{ bottom: 0; }\n.",[1],"nweixin.",[1],"data-v-4f7dae82{ bottom: ",[0,100],"; }\n",],undefined,{path:"./pages/collection/collection.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/collection/collection.wxml') } }));

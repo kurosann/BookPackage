@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "null",
+  "navigationBarTitleText": "消息",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "trailer-stars": "/components/trailerStars"

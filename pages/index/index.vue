@@ -22,7 +22,7 @@
 		<!-- 轮播图end -->
 
 		<!-- 第二栏按钮start -->
-		<view class="flex  justify-around margin-xs margin-top">
+		<view class="flex  justify-around bg-white shadow" style="margin: 22upx 10upx 20upx 20upx;padding: 20upx">
 			<navigator url="../rank/rank?title=分类榜">
 				<button class="cu-btn lines-grey shadow">分类榜</button>
 			</navigator>

@@ -34,8 +34,6 @@
 				<i class="iconfont icon-xiangyou"></i>
 			</div>
 		</div>
-		
-		<div class="btn add" @click.stop="addBook">加入书架</div>
 	</div>
 </template>
 

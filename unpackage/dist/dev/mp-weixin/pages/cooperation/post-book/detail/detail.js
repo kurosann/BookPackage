@@ -203,19 +203,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 var me;var _default =
 {
@@ -245,6 +232,9 @@ var me;var _default =
     this.refresh();
   },
   methods: {
+    supportPlus: function supportPlus() {
+      this.temp++;
+    },
     refresh: function refresh(a) {
 
       uni.request({
@@ -270,7 +260,7 @@ var me;var _default =
         url: me.serverUrl + "/qiushu/addPinglun",
         data: {
           "qiushuId": me.temp.id,
-          "userId": me.temp.userId,
+          "userId": me.userId,
           "content": me.input },
 
 

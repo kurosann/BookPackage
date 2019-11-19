@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var trailerStars = function trailerStars() {return __webpack_require__.e(/*! import() | components/trailerStars */ "components/trailerStars").then(__webpack_require__.bind(null, /*! ../../components/trailerStars.vue */ 352));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var trailerStars = function trailerStars() {return __webpack_require__.e(/*! import() | components/trailerStars */ "components/trailerStars").then(__webpack_require__.bind(null, /*! ../../components/trailerStars.vue */ 352));};
 
 
 
@@ -191,6 +191,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var _self;var _default =
 {
   data: function data() {
     return {
@@ -201,24 +202,43 @@ __webpack_require__.r(__webpack_exports__);
       lists: [] };
 
   },
-  onLoad: function onLoad() {var _this = this;
-    uni.request({
-      url: "http://134.175.204.38:66/comment/getCommentByBookId",
-      data: {
-        "bookId": this.id //引号内是数据库字段
-      },
-      method: 'GET',
-      success: function success(res) {
-        //获取真实数据之前务必判断状态是否200.
-        if (res.data.code == 0) {
-          _this.lists = res.data.data;
-          console.log(_this.lists);
-        }
-      } });
-
+  onLoad: function onLoad() {
+    _self = this;
+    this.refresh();
   },
-
   methods: {
+    refresh: function refresh() {
+      uni.showLoading({
+        mask: true,
+        title: "请稍后..." });
+
+      uni.request({
+        url: this.serverUrl + "/comment/getCommentByUserId?userId=" + this.userId,
+        method: 'GET',
+        success: function success(res) {
+          var lists = res.data.data;
+          for (var i = 0; i < lists.length; i++) {
+            _self.requestGetBook(i, lists);
+          }
+        } });
+
+    },
+    requestGetBook: function requestGetBook(index, lists) {
+      uni.request({
+        url: this.serverUrl + "/book/getBookById?bookId=" + lists[index].bookId,
+        method: 'GET',
+        success: function success(res) {
+          lists[index].book = res.data.data;
+          _self.lists.push(lists[index]);
+        },
+        complete: function complete(res) {
+          uni.hideNavigationBarLoading();
+          uni.hideLoading();
+          uni.stopPullDownRefresh();
+        } });
+
+
+    },
     tabSelect: function tabSelect(e) {
       this.TabCur = e.currentTarget.dataset.id;
       this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60;

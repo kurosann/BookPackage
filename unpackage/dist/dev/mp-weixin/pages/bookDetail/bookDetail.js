@@ -219,7 +219,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _share = _interopRequireDefault(__webpack_require__(/*! ../common/share.js */ 59));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
 //
 //
 //
@@ -318,8 +320,7 @@ var _share = _interopRequireDefault(__webpack_require__(/*! ../common/share.js *
 var _self;var _default = { data: function data() {return { TabCur: 0, scrollLeft: 0, tab: ['馆藏', '书评'], switchA: false, modalName: false, bookId: '', resBookDetail: '', comment: [] };}, onLoad: function onLoad(params) {_self = this;uni.showLoading({ title: '正在玩命加载' });this.fenxiang();this.bookId = params.bookId;console.log(this.bookId);uni.setNavigationBarColor({ frontColor: '#000000', backgroundColor: '#FFFFFF' });this.refresh();}, // 监听原生导航栏
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {var index = e.index;if (index == 0) {this.shareInfo();}}, onPullDownRefresh: function onPullDownRefresh() {_self.refresh();}, onShareAppMessage: function onShareAppMessage(res) {if (res.from === 'button') {// 来自页面内分享按钮
       console.log(res.target);}return { title: '自定义分享标题', path: '/pages/test/test?id=123' };}, methods: { refresh: function refresh() {this.getBookDetail(this.bookId);}, tabSelect: function tabSelect(index) {this.TabCur = index;console.log(this.TabCur);this.scrollLeft = (index - 1) * 60;}, SwitchA: function SwitchA(e) {this.switchA = !this.switchA;for (var i = 0; i < this.list.length; i++) {this.list[i].check = this.switchA;}}, //设置该小说
-    jumpPage: function jumpPage(url) {if (url && typeof url == 'string') {uni.navigateTo({ url: url, animationType: 'zoom-out' });}}, getBookDetail: function getBookDetail(bookId) {var _this = this;uni.request({ url: this.serverUrl + '/book/getBookById?bookId=' + bookId, success: function success(res) {_this.resBookDetail = res.data.data;console.log(res.data.data);_self.requestGetBookComment();}, complete: function complete(res) {uni.hideLoading();} });}, addBook: function addBook() {uni.request({ method: "POST", data: { userId: _self.userId, bookId: _self.bookId }, url: this.serverUrl + '/book/addSave', success: function success(res) {_self.showModal();},
-        complete: function complete(res) {
+    jumpPage: function jumpPage(url) {if (url && typeof url == 'string') {uni.navigateTo({ url: url, animationType: 'zoom-out' });}}, getBookDetail: function getBookDetail(bookId) {var _this = this;uni.request({ url: this.serverUrl + '/book/getBookById?bookId=' + bookId, success: function success(res) {_this.resBookDetail = res.data.data;console.log(res.data.data);_self.requestGetBookComment();}, complete: function complete(res) {uni.hideLoading();} });}, addBook: function addBook() {uni.request({ method: "POST", data: { userId: _self.userId, bookId: _self.bookId }, url: this.serverUrl + '/book/addSave', success: function success(res) {_self.showModal();}, complete: function complete(res) {
         } });
 
     },

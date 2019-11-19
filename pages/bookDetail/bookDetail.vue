@@ -26,7 +26,7 @@
 		<!-- 章节目录end -->
 
 		<!-- 底部start -->
-		<scroll-view scroll-x class="bg-white nav">
+		<scroll-view scroll-x class="bg-white nav" style="border-bottom: dashed 1px;border-left-color: #C8C7CC;">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="index == TabCur ? 'text-green' : ''" v-for="(item, index) in tab" :key="index" @tap="tabSelect(index)">
 					{{ item }}
@@ -70,6 +70,7 @@
 				</view>
 
 			</view>
+			<view v-if="comment.length===0" class="bg-white" style="height: 200upx;display: flex;flex-direction: row;align-items: center;justify-content: center">暂无评论</view>
 		</view>
 		<view class="cu-bar bg-white tabbar border shop" style="position:fixed;bottom:0;width: 100%;z-index:9999999" @click="addBook">
 

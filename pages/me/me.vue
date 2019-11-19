@@ -9,7 +9,7 @@
 				<image class="herder-one-setting" src="../../static/icon/shezhi.png" @click="gotoSetting"></image>
 			</view>
 			<view class="header-two" >
-				<image src="../../static/icon/tushuguan.jpg" class="header-two-icon" @click="gotoInfo"></image>
+				<image :src="userInfo.userPic" class="header-two-icon" @click="gotoInfo"></image>
 			</view>
 			<view class="header-three">
 				<view class="header-three-money">
@@ -34,10 +34,11 @@
 				</view>
 			</scroll-view>
 			
-			<block v-if="TabCur==0">		
-				<view class="guess-u-like">
-					<view class="single-like-movie">
-						<image src="http://apis.juhe.cn/goodbook/img/cb6f51ead4c4959b2d93fcbecb189b96.jpg" class="poster like-movie"></image>
+			<view v-if="TabCur==0">
+				<navigator url="../bookDetail/bookDetail?bookId=212">
+					<view class="guess-u-like bg-white">
+						<view class="single-like-movie">
+							<image src="http://apis.juhe.cn/goodbook/img/cb6f51ead4c4959b2d93fcbecb189b96.jpg" class="poster like-movie"></image>
 							<view class="movie-desc">
 								<view class="movie-title">
 									生猛的进化心理学
@@ -46,39 +47,42 @@
 									作者：Alan S.Miller & Satoshi Kanazawa / 金泽哲
 								</view>
 								<view class="movie_info">
-									截至：2010年7月
+									截至：2019年11月10日
 								</view>
 							</view>
+						</view>
+
+						<view class="movie-oper" @click="praiseMe">
+							<view class="praise-title">逾期中</view>
+						</view>
 					</view>
-					
-					<view class="movie-oper" @click="praiseMe">
-						<view class="praise-title">逾期中</view>
-					</view>
-				</view>
-			</block>
+				</navigator>
+			</view>
 			
-			<block v-if="TabCur==1">
-				<view class="guess-u-like">
-					<view class="single-like-movie">
-						<image src="../../static/icon/tushuguan.jpg" class="poster like-movie"></image> 
+			<view v-if="TabCur==1">
+				<navigator url="../bookDetail/bookDetail?bookId=212">
+					<view class="guess-u-like bg-white">
+						<view class="single-like-movie">
+							<image src="http://apis.juhe.cn/goodbook/img/cb6f51ead4c4959b2d93fcbecb189b96.jpg" class="poster like-movie"></image>
 							<view class="movie-desc">
 								<view class="movie-title">
-									设计心理学
+									生猛的进化心理学
 								</view>
 								<view class="movie_info">
-									作者：唐纳德·诺曼
+									作者：Alan S.Miller & Satoshi Kanazawa / 金泽哲
 								</view>
 								<view class="movie_info">
-									截至：2019年10月29日
+									截至：2019年11月10日
 								</view>
 							</view>
+						</view>
+						<view class="movie-oper" @click="praiseMe">
+							<view class="praise-title">暂未评论</view>
+						</view>
 					</view>
-					
-					<view class="movie-oper" @click="praiseMe">
-						<view class="praise-title">暂未评论</view>
-					</view>
-				</view>
-			</block>
+
+				</navigator>
+			</view>
 					
 		</view>
 	</view>

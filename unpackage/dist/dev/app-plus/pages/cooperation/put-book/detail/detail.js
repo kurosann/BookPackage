@@ -1,2 +1,2 @@
-setCssToHead(["body{ padding-bottom: ",[0,100],"; }\n",],undefined,{path:"./pages/cooperation/put-book/detail/detail.wxss"})();
+setCssToHead(["body { padding-bottom: ",[0,100],"; }\n",],undefined,{path:"./pages/cooperation/put-book/detail/detail.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/cooperation/put-book/detail/detail.wxml') } }));

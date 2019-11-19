@@ -20,25 +20,22 @@
 						<text class="text-black text-bold">{{temp.title}}</text>
 					</view>
 					<view class="padding">{{temp.content}}</view>
-					<view class="cu-list menu-avatar" style="margin: 50upx;border-width:1px;border-color: #cccccc;  border-style: solid; ">
-						<view class="cu-item">
-							<view class="cu-avatar radius" :style="'background-image:url('+temp.book.bookPic+')'"></view>
-							<view class="content flex-sub">
-								<view>
-									{{temp.book.bookName}}
-								</view>
-								<view class="text-gray text-sm flex justify-between" style="display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;">
-									{{temp.book.bookSub2}}
-								</view>
+					<navigator :url="'../bookDetail/bookDetail?bookId=' + temp.book.bookId">
+						<view class="cu-list menu-avatar" style="margin: 50upx;border-width:1px;border-color: #cccccc;  border-style: solid; ">
+							<view class="cu-item">
+								<view class="cu-avatar radius" :style="'background-image:url('+temp.book.bookPic+')'"></view>
+								<view class="content flex-sub">
+									<view>
+										{{temp.book.bookName}}
+									</view>
+									<view class="text-gray text-sm flex justify-between" style="display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;">
+										{{temp.book.bookSub2}}
+									</view>
 
+								</view>
 							</view>
 						</view>
-					</view>
-					<view>
-						<button class="cu-btn round" :key="i" style="margin: 8px;">
-							同求
-						</button>
-					</view>
+					</navigator>
 				</view>
 			</view>
 
@@ -76,8 +73,9 @@
 					<view class="action">
 						<text class="cuIcon-sound text-grey"></text>
 					</view>
-					<input class="solid-bottom" :adjust-position="false" :focus="false" maxlength="300" cursor-spacing="10" @focus="InputFocus"
-					 @blur="InputBlur" v-model="input"></input>
+					<input class="solid-bottom" :adjust-position="false" :focus="false" maxlength="300"
+						   cursor-spacing="10" @focus="InputFocus"
+						   @blur="InputBlur" v-model="input"/>
 					<view class="action">
 						<text class="cuIcon-emojifill text-grey"></text>
 					</view>
@@ -144,7 +142,7 @@
 					url: me.serverUrl+"/tuishu/addPinglun" ,
 					data:{
 						tuishuId: me.temp.id,
-						userId: me.temp.userId,
+						userId: me.userId,
 						content: me.input
 						
 					},

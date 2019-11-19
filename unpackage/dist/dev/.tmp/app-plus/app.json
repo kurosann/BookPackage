@@ -23,7 +23,21 @@
     "pages/cooperation/post-book/next/next",
     "pages/cooperation/post-book/null/null",
     "pages/buffer/buffer",
-    "pages/getBookData/getBookData"
+    "pages/getBookData/getBookData",
+    "pages/sort/search",
+    "pages/sort/sort",
+    "pages/sort/sort_detail",
+    "pages/sort/book_desc",
+    "pages/sort/chapter_reader",
+    "pages/sort/bookshelf",
+    "pages/sort/chapters",
+    "pages/chat/chat",
+    "pages/classify/classify",
+    "pages/fenlei/fenlei",
+    "pages/fenlei/detail/detail",
+    "pages/select/select",
+    "pages/cooperation/put-book/next/next",
+    "pages/cooperation/post-book/detail/detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -49,8 +63,8 @@
         "text": "收藏"
       },
       {
-        "iconPath": "static/tabBarIco/me.png",
-        "selectedIconPath": "static/tabBarIco/me_sel.png",
+        "iconPath": "static/icon/huzhu1.png",
+        "selectedIconPath": "static/icon/huzhu.png",
         "pagePath": "pages/cooperation/cooperation",
         "text": "互助"
       },
@@ -68,7 +82,9 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "testUniapp",
+  "appname": "书袋",
   "compilerVersion": "2.3.3",
-  "usingComponents": {}
+  "usingComponents": {
+    "burt-reward": "/components/burt-reward/index"
+  }
 }

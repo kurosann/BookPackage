@@ -5,7 +5,7 @@
 			<view class="item-wapper face-line-upbottom" @click="operator">
 				<view class="info-words">头像</view>
 				<view class="right-wapper">
-					<image src="../../static/icon/tushuguan.jpg" class="face"></image>
+					<image :src="userInfo.userPic" class="face"></image>
 					<view class="arrow-block">
 						<image src="../../static/icon/left-gray-arrow.png" class="arrow-ico"></image>
 					</view>

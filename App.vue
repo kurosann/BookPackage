@@ -4,6 +4,8 @@
 			console.log('App Launch')
 		},
 		onShow: function() {
+            var userId = uni.getStorageSync("globalUser").userid;
+            this.userId = userId;
 			console.log('App Show')
 		},
 		onHide: function() {

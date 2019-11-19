@@ -4804,6 +4804,12 @@ scroll-view.cu-steps .cu-item {
 .page-block {
         background-color: #ffffff;
 }
+._ul,._li{
+        list-style: none;
+}
+._a{
+        text-decoration: none;
+}
 .fixed {
         position: fixed;
         width: 100%;
@@ -4811,5 +4817,38 @@ scroll-view.cu-steps .cu-item {
         z-index: 1024;
         -webkit-box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
                 box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+.white_bg{
+        background: #f8f8f8;
+}
+.padding10{
+        padding:0 20rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.margin_top30{
+         margin-top:30rpx;
+}
+.borderBox{
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.borderRadius{
+        border-radius: 50%;
+}
+.burt_ellipsis{
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+}
+.burt_ellipsis2{
+         -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+         overflow: hidden;
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         line-clamp: 2;
+         -webkit-box-orient: vertical;
 }
 

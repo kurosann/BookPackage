@@ -213,8 +213,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 var me;var _default =
 {
@@ -268,7 +266,7 @@ var me;var _default =
         url: me.serverUrl + "/tuishu/addPinglun",
         data: {
           tuishuId: me.temp.id,
-          userId: me.temp.userId,
+          userId: me.userId,
           content: me.input },
 
 

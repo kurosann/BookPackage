@@ -59,7 +59,7 @@
 								</view>
 							</view>
 							<view class="text-content" style="padding:  30upx;">
-								{{item.content}}
+								{{item.title}}
 							</view>
 							<view class="grid flex-sub padding-lr col-3 grid-square">
 
@@ -244,6 +244,7 @@
 				this.menutitle = '全部';
 				console.log(e.value);
 				me.switcha = e.value;
+				this.number = 0;
 				me.saixuan(this.number)
 			},
 

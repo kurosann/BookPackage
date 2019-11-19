@@ -162,12 +162,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 var _index = __webpack_require__(/*! @/utils/index */ 18);
 var _config = __webpack_require__(/*! @/config */ 19); //
-//
-//
 //
 //
 //
@@ -209,7 +205,9 @@ var _config = __webpack_require__(/*! @/config */ 19); //
 var _default = { data: function data() {return { id: '', //小说id
       dataObj: {} };}, mounted: function mounted() {this.id = this.$mp.query.id;this.getData();}, methods: { //设置该小说
     jumpPage: function jumpPage(url) {console.log(url);if (url && typeof url == 'string') {uni.navigateBack();uni.navigateTo({ url: url, animationType: 'zoom-out', success: function success(res) {} });}}, getData: function getData() {var _this = this;if (!this.id) {return;};var url = _config.getBookDescUrl + '/' + this.id;(0, _index.get)(url, {}).then(function (res) {res.cover = decodeURIComponent(res.cover).replace('/agent/', '');_this.dataObj = res;});}, //点击添加
-    addBook: function addBook() {var tmp = { id: this.id, cover: this.cover, title: this.dataObj.title };this.$store.commit('novel/ADD_BOOK', tmp);
+    addBook: function addBook() {var tmp = { id: this.id, cover: this.cover, title: this.dataObj.title };
+
+      this.$store.commit('novel/ADD_BOOK', tmp);
     } },
 
   onPullDownRefresh: function onPullDownRefresh() {
