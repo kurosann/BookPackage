@@ -6,7 +6,7 @@
 		</sl-filter>
 
 		<view class="padding bg-white">
-			<view class="sing-like-movie" v-for="movieLike,gIndex in dd ">
+			<view class="sing-like-movie" v-for="(movieLike,gIndex) in dd ">
 				<image :src="movieLike.bookPic" class="like-movie"></image>
 				<view class="movie-desc">
 					<view class="movie-title">
